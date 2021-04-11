@@ -1,6 +1,9 @@
 {
     "version": "0.1",
-    "enableFiletypes": ["git-commit", "jupyter"],
+    "enableFiletypes": [
+        "git-commit",
+        "jupyter"
+    ],
     "flagWords": [
         "analyse",
         "colour",
@@ -41,11 +44,18 @@
         "typings"
     ],
     "language": "en-US",
-    "words": ["pdgref", "pylint", "pytest"],
+    "words": [
+        "pdgref",
+        "pylint",
+        "pytest"
+    ],
     "ignoreWords": [
+        "codacy",
         "codecov",
         "commitlint",
         "docutils",
+        "isort",
+        "mypy",
         "pypi",
         "pyquery",
         "rtfd",
