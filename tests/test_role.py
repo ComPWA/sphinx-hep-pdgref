@@ -13,6 +13,7 @@ def test_text(app, warning) -> None:
     assert lines[::2] == [
         f"PDG{DEFAULT_YEAR}",
         "PDG2018",
+        "PDG2015, §Quark Model, p.2",
         f"PDG{DEFAULT_YEAR}, §Kinematics",
         f"PDG{DEFAULT_YEAR}, §QCD, p.5",
         "PDG2014, §Resonances",
@@ -30,6 +31,7 @@ def test_html(app, warning) -> None:
     assert [ref.text for ref in external_refs] == [
         f"PDG{DEFAULT_YEAR}",
         "PDG2018",
+        "PDG2015, §Quark Model, p.2",
         "PDG2020, §Kinematics",
         "PDG2020, §QCD, p.5",
         "PDG2014, §Resonances",
@@ -38,6 +40,7 @@ def test_html(app, warning) -> None:
     assert [ref.get("href") for ref in external_refs] == [
         "https://pdg.lbl.gov/2020/listings/rpp2020-list-K-zero.pdf",
         "https://pdg.lbl.gov/2018/listings/rpp2018-list-pi-plus-minus.pdf",
+        "https://pdg.lbl.gov/2015/reviews/rpp2015-rev-quark-model.pdf#page=2",
         "https://pdg.lbl.gov/2020/reviews/rpp2020-rev-kinematics.pdf",
         "https://pdg.lbl.gov/2020/reviews/rpp2020-rev-qcd.pdf#page=5",
         "https://pdg.lbl.gov/2014/reviews/rpp2014-rev-resonances.pdf",

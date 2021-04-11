@@ -2,6 +2,8 @@
 
 :pdg-listing:`pi-plus-minus; 2018`
 
+:pdg-review:`Quark Model; 2015; p.2`
+
 :pdg-review:`Kinematics`
 
 :pdg-review:`QCD; p5`

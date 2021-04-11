@@ -56,9 +56,7 @@ can be used as follows:
 
 :pdg-review:`QCD; p5`
 
-:pdg-listing:`QCD; p5`
-
-:pdg-review:`QCD; p5`
+:pdg-review:`PDG2015; Quark Model; p.2`
 ```
 
 which will render in the HTML pages as:
@@ -73,8 +71,6 @@ which will render in the HTML pages as:
 >
 > [PDG2020, §QCD, p.5](https://pdg.lbl.gov/2020/reviews/rpp2020-rev-qcd.pdf#page=5)
 >
-> [PDG2020, §QCD, p.5](https://pdg.lbl.gov/2020/reviews/rpp2020-rev-qcd.pdf#page=5)
->
-> [PDG2018](https://pdg.lbl.gov/2018/listings/rpp2018-list-K-zero.pdf)
+> [PDG2015, §Quark Model, p.2](https://pdg.lbl.gov/2015/reviews/rpp2015-rev-qcd.pdf#page=2)
 
 _Note that the resulting links lead to the correct page as well!_

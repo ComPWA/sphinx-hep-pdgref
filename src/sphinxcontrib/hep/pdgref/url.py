@@ -37,6 +37,7 @@ def _create_listing_url(entry: PDGEntry) -> str:
 def _create_review_url(entry: PDGEntry) -> str:
     section_url = entry.section
     section_url = section_url.lower()
+    section_url = section_url.replace(" ", "-")
     url = URLPattern.REVIEW.format(entry.year, section_url)  # type: ignore
     url += __create_page_anchor(entry)
     return url
