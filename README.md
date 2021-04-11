@@ -46,6 +46,8 @@ and one for the
 can be used as follows:
 
 ```restructuredtext
+:pdg-listing:`K-zero`
+
 :pdg-review:`Kinematics`
 
 :pdg-review:`2014; Resonances`
@@ -61,6 +63,8 @@ can be used as follows:
 
 which will render in the HTML pages as:
 
+> [PDG2020](https://pdg.lbl.gov/2020/listings/rpp2020-list-K-zero.pdf)
+>
 > [PDG2020, §Kinematics](https://pdg.lbl.gov/2020/reviews/rpp2020-rev-kinematics.pdf)
 >
 > [PDG2014, §Resonances](https://pdg.lbl.gov/2014/reviews/rpp2014-rev-resonances.pdf)
