@@ -1,0 +1,65 @@
+/Jamroot
+
+# Output files
+*.gv
+*.json
+*.npy
+*.out
+*.pdf
+*.pickle
+*.png
+*.root
+*.svg
+*.v2
+*.xml
+*.yaml
+*.yml
+
+# Temporary files
+.fuse_hidden*
+.ipynb_checkpoints/
+__pycache__/
+
+# Build files
+*.egg-info/
+*build/
+.eggs/
+.fuse_*
+dist/
+version.py
+
+# Temporary files
+*.pyc
+*condaenv.*
+.coverage
+.coverage.*
+.ipynb_checkpoints/
+.mypy*/
+.pytest_cache/
+__pycache__/
+htmlcov/
+prof/
+
+# Virtual environments
+*venv/
+.tox/
+pyvenv*/
+
+# Settings
+.idea/
+**.code-workspace
+
+# Exceptions
+!.clang-format
+!.cspell.json
+!.github/*.yml
+!.github/*/*.yml
+!.gitpod.yml
+!.markdown-link-check.json
+!.markdownlint.json
+!.pre-commit-config.yaml
+!.readthedocs.yml
+!.vscode/*.json
+!codecov.yml
+!environment.yml
+!pyrightconfig.json

@@ -1,0 +1,71 @@
+{
+  "[bibtex]": {
+    "editor.formatOnSave": false
+  },
+  "[ipynb]": {
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "off"
+  },
+  "[pip-requirements]": {
+    "editor.wordWrap": "off"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.enabled": true,
+  "coverage-gutters.coverageFileNames": ["coverage.xml"],
+  "coverage-gutters.coverageReportFileName": "**/htmlcov/index.html",
+  "coverage-gutters.showGutterCoverage": false,
+  "coverage-gutters.showLineCoverage": true,
+  "editor.formatOnSave": true,
+  "editor.rulers": [80],
+  "files.watcherExclude": {
+    "**/*_cache/**": true,
+    "**/.eggs/**": true,
+    "**/.git/**": true,
+    "**/.tox/**": true
+  },
+  "git.rebaseWhenSync": true,
+  "githubPullRequests.telemetry.enabled": false,
+  "gitlens.advanced.telemetry.enabled": false,
+  "python.analysis.autoImportCompletions": false,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
+  "python.linting.banditEnabled": false,
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pydocstyleEnabled": true,
+  "python.linting.pylamaEnabled": false,
+  "python.linting.pylintCategorySeverity.refactor": "Information",
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintUseMinimalCheckers": false,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.pytestArgs": ["--color=no", "--no-cov"],
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "rewrap.wrappingColumn": 79,
+  "search.exclude": {
+    "**/tests/**/__init__.py": true,
+    "*/tox.ini": true,
+    "src/*/*/__init__.py": true,
+    "src/*/__init__.py": true
+  },
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false
+}

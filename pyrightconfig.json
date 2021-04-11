@@ -1,0 +1,10 @@
+{
+  "exclude": [".git", ".tox", "docs/_build"],
+  "include": ["src", "tests"],
+  "reportGeneralTypeIssues": false,
+  "reportUnboundVariable": false,
+  "reportUnusedClass": true,
+  "reportUnusedFunction": true,
+  "reportUnusedImport": true,
+  "reportUnusedVariable": true
+}

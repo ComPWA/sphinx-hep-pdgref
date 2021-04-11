@@ -1,0 +1,35 @@
+name-template: sphinxcontrib.hep.pdgref $NEXT_PATCH_VERSION
+tag-template: $NEXT_PATCH_VERSION
+
+categories:
+  - title: 💡 New features
+    label: 💡 Feature
+  - title: ⚠️ Interface
+    label: ⚠️ Interface
+  - title: 🐛 Bug fixes
+    label: Bug
+  - title: 🔨 Internal maintenance
+    label: 🔨 Maintenance
+  - title: 📝 Documentation
+    label: 📝 Docs
+  - title: 🖱️ Developer Experience
+    label: 🖱️ DX
+
+change-template: |
+  <details>
+  <summary>$TITLE (#$NUMBER)</summary>
+
+  $BODY
+
+  </details>
+
+replacers:
+  - search: /<summary>([a-z]+!?:\s*)(.*)</summary>/g
+    replace: <summary>$2</summary>
+
+sort-direction: ascending
+
+template: |
+  # Release $NEXT_PATCH_VERSION
+
+  $CHANGES
