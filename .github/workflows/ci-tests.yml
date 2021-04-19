@@ -1,4 +1,4 @@
-# cspell:ignore doctests nauto unittests
+# cspell:ignore doctests unittests
 
 name: CI-tests
 
@@ -62,4 +62,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install .[test]
       - name: Run unit tests and doctests
-        run: pytest -nauto
+        run: pytest
