@@ -50,6 +50,7 @@
     ],
     "language": "en-US",
     "words": [
+        "conda",
         "pdgref",
         "pylint",
         "pytest"
@@ -65,6 +66,7 @@
         "pyquery",
         "rtfd",
         "setuptools",
-        "sphinxcontrib"
+        "sphinxcontrib",
+        "venv"
     ]
 }
