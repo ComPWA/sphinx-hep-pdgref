@@ -36,6 +36,7 @@ repos:
     rev: 0.0.16
     hooks:
       - id: check-dev-files
+      - id: format-setup-cfg
 
   - repo: https://github.com/asottile/blacken-docs
     rev: v1.10.0
