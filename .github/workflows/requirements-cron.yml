@@ -5,7 +5,7 @@ name: Requirements (scheduled)
 on:
   schedule:
     # https://crontab.guru
-    - cron: "0 2 * */1 1" # every first Monday in the month
+    - cron: "0 2 1 */1 *" # first day of the month
   workflow_dispatch:
 
 jobs:
