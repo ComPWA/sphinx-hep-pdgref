@@ -60,10 +60,14 @@ repos:
     hooks:
       - id: blacken-docs
 
-  - repo: https://github.com/ComPWA/mirrors-cspell
-    rev: v5.6.6
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v5.6.7
     hooks:
       - id: cspell
+        args:
+          - --no-must-find-files
+          - --no-progress
+        verbose: false
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 2.3.5
