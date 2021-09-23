@@ -35,7 +35,7 @@ def pdgref(pattern: URLPattern) -> RoleFunction:
                 " The order does not matter"
             )
         if options is None:
-            options = dict()
+            options = {}
         node = nodes.reference(rawtext, link_text, refuri=url, **options)
         return [node], []
 
