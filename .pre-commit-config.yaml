@@ -64,10 +64,6 @@ repos:
     rev: v5.6.9
     hooks:
       - id: cspell
-        args:
-          - --no-must-find-files
-          - --no-progress
-        verbose: false
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 2.3.54
