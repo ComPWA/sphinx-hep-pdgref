@@ -45,7 +45,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/ComPWA/repo-maintenance
-    rev: 0.0.37
+    rev: 0.0.44
     hooks:
       - id: check-dev-files
       - id: format-setup-cfg
@@ -61,13 +61,9 @@ repos:
       - id: blacken-docs
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v5.6.7
+    rev: v5.6.9
     hooks:
       - id: cspell
-        args:
-          - --no-must-find-files
-          - --no-progress
-        verbose: false
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 2.3.54
@@ -84,7 +80,7 @@ repos:
       - id: isort
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.28.1
+    rev: v0.29.0
     hooks:
       - id: markdownlint
 
@@ -104,7 +100,7 @@ repos:
       - id: pydocstyle
 
   - repo: https://github.com/ComPWA/mirrors-pyright
-    rev: v1.1.170
+    rev: v1.1.175
     hooks:
       - id: pyright
 
