@@ -45,7 +45,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/ComPWA/repo-maintenance
-    rev: 0.0.44
+    rev: 0.0.50
     hooks:
       - id: check-dev-files
       - id: format-setup-cfg
@@ -61,7 +61,7 @@ repos:
       - id: blacken-docs
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v5.6.9
+    rev: v5.6.10
     hooks:
       - id: cspell
 
@@ -100,7 +100,7 @@ repos:
       - id: pydocstyle
 
   - repo: https://github.com/ComPWA/mirrors-pyright
-    rev: v1.1.175
+    rev: v1.1.179
     hooks:
       - id: pyright
 
