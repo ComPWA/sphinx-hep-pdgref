@@ -9,7 +9,7 @@ from sphinxcontrib.hep.pdgref.url import (
 
 
 @pytest.mark.parametrize(
-    "entry, link_text, url",
+    ("entry", "link_text", "url"),
     [
         (
             PDGEntry.from_str("Resonances; 2018; p. 3"),
@@ -51,7 +51,9 @@ from sphinxcontrib.hep.pdgref.url import (
 )
 def test_create_link_text_url(entry: PDGEntry, link_text: str, url: str):
     if link_text is None or url is None:
-        with pytest.raises(ValueError):
+        with pytest.raises(
+            ValueError, match=r"^URL cannot contain spaces or commas$"
+        ):
             create_url(entry, pattern=URLPattern.LISTING)
         return
     if "listings" in url:

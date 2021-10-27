@@ -12,8 +12,12 @@ from .entry import PDGEntry
 
 
 class URLPattern(str, Enum):
-    LISTING = "https://pdg.lbl.gov/{0}/listings/rpp{0}-list-{1}.pdf"
-    REVIEW = "https://pdg.lbl.gov/{0}/reviews/rpp{0}-rev-{1}.pdf"
+    LISTING = (
+        "https://pdg.lbl.gov/{0}/listings/rpp{0}-list-{1}.pdf"  # noqa: FS003
+    )
+    REVIEW = (
+        "https://pdg.lbl.gov/{0}/reviews/rpp{0}-rev-{1}.pdf"  # noqa: FS003
+    )
 
 
 def create_url(entry: PDGEntry, *, pattern: URLPattern) -> str:
@@ -29,7 +33,7 @@ def create_url(entry: PDGEntry, *, pattern: URLPattern) -> str:
 
 
 def _create_listing_url(entry: PDGEntry) -> str:
-    url = URLPattern.LISTING.format(entry.year, entry.section)  # type: ignore
+    url = URLPattern.LISTING.format(entry.year, entry.section)  # type: ignore[str-format]
     url += __create_page_anchor(entry)
     return url
 
@@ -38,7 +42,7 @@ def _create_review_url(entry: PDGEntry) -> str:
     section_url = entry.section
     section_url = section_url.lower()
     section_url = section_url.replace(" ", "-")
-    url = URLPattern.REVIEW.format(entry.year, section_url)  # type: ignore
+    url = URLPattern.REVIEW.format(entry.year, section_url)  # type: ignore[str-format]
     url += __create_page_anchor(entry)
     return url
 

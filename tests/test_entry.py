@@ -14,7 +14,7 @@ from sphinxcontrib.hep.pdgref.entry import (
 
 class TestPDGEntry:
     @pytest.mark.parametrize(
-        "text, expected, first_page",
+        ("text", "expected", "first_page"),
         [
             (
                 "2018; Resonances; pp. 2-4, 6",
@@ -40,7 +40,10 @@ class TestPDGEntry:
         first_page: Optional[int],
     ):
         if expected is None:
-            with pytest.raises(ValueError):
+            with pytest.raises(
+                ValueError,
+                match=r'Input string ".+" contains more than 3 segments',
+            ):
                 entry = PDGEntry.from_str(text)
         else:
             entry = PDGEntry.from_str(text)
@@ -51,7 +54,7 @@ class TestPDGEntry:
 
 
 @pytest.mark.parametrize(
-    "text, formated_pages, first_page",
+    ("text", "formated_pages", "first_page"),
     [
         ("test", None, None),
         ("5", None, 5),
@@ -69,7 +72,9 @@ def test_get_page_numbers(
 ):
     assert get_page_numbers(text) == formated_pages
     if first_page is None:
-        with pytest.raises(ValueError) as exception:
+        with pytest.raises(
+            ValueError, match=fr'Badly formatted page numbers "{text}"'
+        ) as exception:
             get_first_page(text)
         assert text in str(exception.value)
     else:
@@ -77,7 +82,7 @@ def test_get_page_numbers(
 
 
 @pytest.mark.parametrize(
-    "text, expected",
+    ("text", "expected"),
     [
         ("1993", 1993),
         ("\t1993 ", 1993),

@@ -1,4 +1,4 @@
-import pyquery as pq  # type: ignore
+import pyquery as pq
 import pytest
 
 from sphinxcontrib.hep.pdgref.entry import DEFAULT_YEAR

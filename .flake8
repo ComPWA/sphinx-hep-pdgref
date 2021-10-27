@@ -2,18 +2,31 @@
 application-import-names =
     sphinxcontrib
 filename =
+    ./docs/*.py
     ./src/*.py
     ./tests/*.py
 exclude =
-    __pycache__
-    typings/**
-ignore = # more info: https://www.flake8rules.com/
-    E203 # https://github.com/psf/black#slices
-    E231 # allowed by black
-    E501 # https://github.com/psf/black#line-length
-    RST299 # missing pygments
-    RST201 # block quote ends without a blank line (black formatting)
-    RST301 # unexpected indentation (related to google style docstring)
-    W503 # https://github.com/psf/black#line-breaks--binary-operators
+    **/__pycache__
+    **/_build
+    /typings/**
+ignore =
+    # https://github.com/psf/black#slices
+    E203
+    # allowed by black
+    E231
+    # https://github.com/psf/black#line-length
+    E501
+    # missing pygments
+    RST299
+    # block quote ends without a blank line (black formatting)
+    RST201
+    # unexpected indentation (related to google style docstring)
+    RST301
+    # enforce type ignore with mypy error codes (combined --extend-select=TI100)
+    TI1
+    # https://github.com/psf/black#line-breaks--binary-operators
+    W503
+extend-select =
+    TI100
 rst-roles =
     file,

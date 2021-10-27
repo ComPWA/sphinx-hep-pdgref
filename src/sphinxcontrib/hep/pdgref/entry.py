@@ -48,7 +48,9 @@ class PDGEntry:
         """
         segments = text.split(";")
         if len(segments) > 3:
-            raise ValueError
+            raise ValueError(
+                f'Input string "{text}" contains more than 3 segments'
+            )
         section = text
         year = DEFAULT_YEAR
         pages = None
