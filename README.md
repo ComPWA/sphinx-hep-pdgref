@@ -2,7 +2,7 @@
 
 [![PyPI package](https://badge.fury.io/py/sphinxcontrib-hep-pdgref.svg)](https://pypi.org/project/sphinxcontrib-hep-pdgref)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/sphinxcontrib-hep-pdgref)](https://pypi.org/project/sphinxcontrib-hep-pdgref)
-[![GPLv3+ license](https://img.shields.io/badge/License-GPLv3+-blue.svg)](https://www.gnu.org/licenses/gpl-3.0-standalone.html)
+[![BSD 3-Clause license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![GitPod](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ComPWA/sphinxcontrib-hep-pdgref)
 [![Test coverage](https://codecov.io/gh/ComPWA/sphinxcontrib-hep-pdgref/branch/main/graph/badge.svg?token=SS8ZB8J11N)](https://codecov.io/gh/ComPWA/sphinxcontrib-hep-pdgref)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/dbe042deb2914f6098eb98586d3983fe)](https://www.codacy.com/gh/ComPWA/sphinxcontrib-hep-pdgref)
