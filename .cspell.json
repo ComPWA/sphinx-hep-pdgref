@@ -61,15 +61,19 @@
         "pytest"
     ],
     "ignoreWords": [
+        "bdist",
         "codacy",
         "codecov",
         "commitlint",
         "docutils",
         "isort",
         "mypy",
+        "noreply",
+        "prereleased",
         "pypi",
         "pyquery",
         "rtfd",
+        "sdist",
         "setuptools",
         "sphinxcontrib",
         "venv"
