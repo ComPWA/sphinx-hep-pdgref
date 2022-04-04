@@ -1,5 +1,6 @@
 # PDG role for Sphinx
 
+[![GitPod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ComPWA/sphinxcontrib-hep-pdgref)
 [![PyPI package](https://badge.fury.io/py/sphinxcontrib-hep-pdgref.svg)](https://pypi.org/project/sphinxcontrib-hep-pdgref)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/sphinxcontrib-hep-pdgref)](https://pypi.org/project/sphinxcontrib-hep-pdgref)
 [![BSD 3-Clause license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
