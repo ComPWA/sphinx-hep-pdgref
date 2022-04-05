@@ -39,9 +39,8 @@
   "git.rebaseWhenSync": true,
   "github-actions.workflows.pinned.refresh.enabled": true,
   "github-actions.workflows.pinned.workflows": [
-    ".github/workflows/linkcheck.yml",
-    ".github/workflows/ci-docs.yml",
-    ".github/workflows/ci-tests.yml"
+    ".github/workflows/ci-tests.yml",
+    ".github/workflows/ci-style.yml"
   ],
   "python.analysis.autoImportCompletions": false,
   "python.analysis.diagnosticMode": "workspace",
