@@ -33,4 +33,5 @@ jobs:
         # cspell:ignore editorconfig pyright
         run: |
           pre-commit run editorconfig-checker -a --color always
+          pre-commit run markdown-link-check -a --color always
           pre-commit run pyright -a --color always

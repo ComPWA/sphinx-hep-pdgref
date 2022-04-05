@@ -73,7 +73,7 @@ def test_get_page_numbers(
     assert get_page_numbers(text) == formated_pages
     if first_page is None:
         with pytest.raises(
-            ValueError, match=fr'Badly formatted page numbers "{text}"'
+            ValueError, match=rf'Badly formatted page numbers "{text}"'
         ) as exception:
             get_first_page(text)
         assert text in str(exception.value)
