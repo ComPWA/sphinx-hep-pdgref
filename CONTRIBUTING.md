@@ -1,5 +1,6 @@
 # How to contribute?
 
+[![Open in Visual Studio Code](https://img.shields.io/badge/vscode-open-blue?logo=visualstudiocode)](https://open.vscode.dev/ComPWA/sphinxcontrib-hep-pdgref)
 [![GitPod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ComPWA/sphinxcontrib-hep-pdgref)
 
 This package is part of the [ComPWA Organization](https://github.com/ComPWA).
