@@ -46,12 +46,9 @@
     ".github/workflows/ci-docs.yml",
     ".github/workflows/ci-tests.yml"
   ],
-  "githubPullRequests.telemetry.enabled": false,
-  "gitlens.advanced.telemetry.enabled": false,
   "python.analysis.autoImportCompletions": false,
   "python.analysis.diagnosticMode": "workspace",
   "python.formatting.provider": "black",
-  "python.languageServer": "Pylance",
   "python.linting.banditEnabled": false,
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
@@ -60,8 +57,6 @@
   "python.linting.pylamaEnabled": false,
   "python.linting.pylintCategorySeverity.refactor": "Information",
   "python.linting.pylintEnabled": true,
-  "python.linting.pylintUseMinimalCheckers": false,
-  "python.testing.nosetestsEnabled": false,
   "python.testing.pytestArgs": ["--color=no", "--no-cov"],
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
@@ -72,6 +67,5 @@
     "src/*/*/__init__.py": true,
     "src/*/__init__.py": true
   },
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false
+  "telemetry.telemetryLevel": "off"
 }
