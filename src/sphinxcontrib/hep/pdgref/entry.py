@@ -15,19 +15,19 @@ directly lead to the correct page number when clicking the generated link.
 import re
 from typing import Optional
 
-import attr
+from attrs import field, frozen
 
 DEFAULT_YEAR = 2020
 
 
-@attr.s(auto_attribs=True, frozen=True)
+@frozen
 class PDGEntry:
     """Data container for a link as described in `format`."""
 
     section: str
     year: int
     pages: Optional[str]
-    first_page: Optional[int] = attr.ib(init=False, repr=False)
+    first_page: Optional[int] = field(init=False, repr=False)
 
     def __attrs_post_init__(self) -> None:
         if self.pages is None:
@@ -48,9 +48,7 @@ class PDGEntry:
         """
         segments = text.split(";")
         if len(segments) > 3:
-            raise ValueError(
-                f'Input string "{text}" contains more than 3 segments'
-            )
+            raise ValueError(f'Input string "{text}" contains more than 3 segments')
         section = text
         year = DEFAULT_YEAR
         pages = None

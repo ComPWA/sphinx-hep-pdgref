@@ -44,7 +44,6 @@
         "docs/adr/*/*",
         "docs/conf.py",
         "labels.toml",
-        "Makefile",
         "pyproject.toml",
         "pyrightconfig.json",
         "pytest.ini",
@@ -71,6 +70,7 @@
         "isort",
         "mypy",
         "noreply",
+        "outdir",
         "prereleased",
         "pypi",
         "pyquery",
@@ -78,6 +78,7 @@
         "sdist",
         "setuptools",
         "sphinxcontrib",
+        "testroot",
         "venv"
     ]
 }

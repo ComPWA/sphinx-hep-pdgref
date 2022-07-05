@@ -17,8 +17,7 @@
 
 This package is a
 [Sphinx extension](https://www.sphinx-doc.org/en/master/usage/extensions/index.html)
-that makes it easy to refer to PDF files of reviews and particle listings in
-the PDG.
+that makes it easy to refer to PDF files of reviews and particle listings in the PDG.
 
 ## Installation
 
@@ -43,10 +42,9 @@ extensions = [
 ## Usage
 
 There are two roles, one for the
-[particle listings](https://pdg.lbl.gov/2020/listings/contents_listings.html)
-and one for the
-[review](https://pdg.lbl.gov/2020/reviews/contents_sports.html). These roles
-can be used as follows:
+[particle listings](https://pdg.lbl.gov/2020/listings/contents_listings.html) and one
+for the [review](https://pdg.lbl.gov/2020/reviews/contents_sports.html). These roles can
+be used as follows:
 
 ```restructuredtext
 :pdg-listing:`K-zero`

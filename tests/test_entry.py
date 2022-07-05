@@ -1,4 +1,3 @@
-# pylint: disable=no-self-use
 from typing import Optional
 
 import pytest
@@ -54,7 +53,7 @@ class TestPDGEntry:
 
 
 @pytest.mark.parametrize(
-    ("text", "formated_pages", "first_page"),
+    ("text", "formatted_pages", "first_page"),
     [
         ("test", None, None),
         ("5", None, 5),
@@ -68,9 +67,9 @@ class TestPDGEntry:
     ],
 )
 def test_get_page_numbers(
-    text: str, formated_pages: Optional[str], first_page: Optional[int]
+    text: str, formatted_pages: Optional[str], first_page: Optional[int]
 ):
-    assert get_page_numbers(text) == formated_pages
+    assert get_page_numbers(text) == formatted_pages
     if first_page is None:
         with pytest.raises(
             ValueError, match=rf'Badly formatted page numbers "{text}"'

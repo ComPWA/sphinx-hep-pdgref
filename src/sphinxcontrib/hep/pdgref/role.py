@@ -29,13 +29,14 @@ def pdgref(pattern: URLPattern) -> RoleFunction:
             raise ValueError(  # pylint: disable=raise-missing-from
                 "Badly formatted argument:\n"
                 f"  {rawtext}\n"
-                "This role requires at most 3 semicolumn-separated arguments:"
+                "This role requires at most 3 semicolon-separated arguments:"
                 " section; [year; [page number(s)]]"
                 ' with page numbers something like "p12", or "pp. 12-15, 17".'
                 " The order does not matter"
             )
         if options is None:
             options = {}
+        # cspell:ignore refuri
         node = nodes.reference(rawtext, link_text, refuri=url, **options)
         return [node], []
 
