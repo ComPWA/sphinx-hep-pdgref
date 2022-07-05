@@ -1,4 +1,3 @@
-# pylint: disable=no-self-use
 from typing import Optional
 
 import pytest
