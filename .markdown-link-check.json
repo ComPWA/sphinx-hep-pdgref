@@ -7,7 +7,7 @@
       "pattern": ".*&quot;"
     },
     {
-      "pattern": "https://img\\.shields\\.io/.*"
+      "pattern": "^https://img\\.shields\\.io/badge/.*"
     },
     {
       "pattern": "https://opensource\\.org/licenses/BSD\\-3\\-Clause"
