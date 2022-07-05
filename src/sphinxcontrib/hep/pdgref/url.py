@@ -12,12 +12,8 @@ from .entry import PDGEntry
 
 
 class URLPattern(str, Enum):
-    LISTING = (
-        "https://pdg.lbl.gov/{0}/listings/rpp{0}-list-{1}.pdf"  # noqa: FS003
-    )
-    REVIEW = (
-        "https://pdg.lbl.gov/{0}/reviews/rpp{0}-rev-{1}.pdf"  # noqa: FS003
-    )
+    LISTING = "https://pdg.lbl.gov/{0}/listings/rpp{0}-list-{1}.pdf"  # noqa: FS003
+    REVIEW = "https://pdg.lbl.gov/{0}/reviews/rpp{0}-rev-{1}.pdf"  # noqa: FS003
 
 
 def create_url(entry: PDGEntry, *, pattern: URLPattern) -> str:
