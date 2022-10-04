@@ -78,6 +78,7 @@
         "prereleased",
         "pypi",
         "pyquery",
+        "pyright",
         "rtfd",
         "sdist",
         "setuptools",
