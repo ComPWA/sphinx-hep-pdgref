@@ -11,7 +11,9 @@ disable=
   C0115,  # done by pydocstyle
   C0116,  # done by pydocstyle
   R0801,  # similar lines # https://github.com/PyCQA/pylint/issues/214
+  import-error,  # handled by pyright
   logging-fstring-interpolation,
+  no-name-in-module,  # handled by pyright
   not-callable,
   unused-import,  # https://www.flake8rules.com/rules/F401
 

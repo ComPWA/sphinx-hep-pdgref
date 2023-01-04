@@ -1,5 +1,3 @@
-# pyright:reportMissingImports=false
-# pylint: disable=import-error no-name-in-module
 import pytest
 
 from sphinxcontrib.hep.pdgref.entry import DEFAULT_YEAR, PDGEntry  # type:ignore[import]
