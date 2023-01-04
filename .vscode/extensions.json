@@ -8,6 +8,7 @@
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "ms-python.flake8",
+    "ms-python.isort",
     "ms-python.pylint",
     "ms-python.python",
     "ms-python.vscode-pylance",

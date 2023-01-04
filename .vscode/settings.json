@@ -43,6 +43,8 @@
     ".github/workflows/ci-tests.yml",
     ".github/workflows/ci-style.yml"
   ],
+  "isort.check": true,
+  "isort.importStrategy": "fromEnvironment",
   "pylint.importStrategy": "fromEnvironment",
   "python.analysis.autoImportCompletions": false,
   "python.analysis.diagnosticMode": "workspace",
