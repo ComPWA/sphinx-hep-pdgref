@@ -20,6 +20,7 @@ vscode:
     - eamodio.gitlens
     - editorconfig.editorconfig
     - esbenp.prettier-vscode
+    - ms-python.pylint
     - ms-python.python
     - ms-python.vscode-pylance
     - redhat.vscode-yaml
