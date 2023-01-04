@@ -48,6 +48,9 @@ repos:
     rev: 0.0.161
     hooks:
       - id: check-dev-files
+        args:
+          - --repo-name=sphinxcontrib-hep-pdgref
+          - --repo-title=sphinxcontrib.hep.pdgref
       - id: format-setup-cfg
 
   - repo: https://github.com/psf/black

@@ -33,3 +33,5 @@ sort-direction: ascending
 
 template: |
   $CHANGES
+
+  _The full changelog as commits can be found [here](https://github.com/ComPWA/sphinxcontrib-hep-pdgref/compare/$PREVIOUS_TAG...$NEXT_PATCH_VERSION)._
