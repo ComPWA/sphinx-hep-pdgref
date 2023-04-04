@@ -69,10 +69,12 @@ repos:
       - id: cspell
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 2.7.1
+    rev: "2.7.1"
     hooks:
       - id: editorconfig-checker
-        exclude: >
+        name: editorconfig
+        alias: ec
+        exclude: >-
           (?x)^(
             .*\.py
           )$
@@ -137,3 +139,8 @@ repos:
         language: system
         types:
           - python
+
+  - repo: https://github.com/ComPWA/mirrors-taplo
+    rev: v0.8.0
+    hooks:
+      - id: taplo

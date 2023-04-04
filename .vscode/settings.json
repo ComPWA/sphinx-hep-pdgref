@@ -48,6 +48,7 @@
   "pylint.importStrategy": "fromEnvironment",
   "python.analysis.autoImportCompletions": false,
   "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.typeCheckingMode": "strict",
   "python.formatting.provider": "black",
   "python.linting.banditEnabled": false,
@@ -66,6 +67,5 @@
     "*/.pydocstyle": true,
     "src/*/*/__init__.py": true,
     "src/*/__init__.py": true
-  },
-  "telemetry.telemetryLevel": "off"
+  }
 }
