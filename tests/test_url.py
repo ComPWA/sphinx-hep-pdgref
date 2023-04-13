@@ -50,7 +50,7 @@ from sphinxcontrib.hep.pdgref.url import (  # type:ignore[import]
     ],
 )
 def test_create_link_text_url(entry: PDGEntry, link_text: str, url: str):
-    if link_text is None or url is None:
+    if link_text is None or url is None:  # pyright: ignore[reportUnnecessaryComparison]
         with pytest.raises(ValueError, match=r"^URL cannot contain spaces or commas$"):
             create_url(entry, pattern=URLPattern.LISTING)
         return

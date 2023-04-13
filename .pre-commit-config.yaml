@@ -2,13 +2,11 @@ ci:
   autoupdate_commit_msg: "MAINT: autoupdate pre-commit hooks"
   autoupdate_schedule: quarterly # already done by requirements-cron.yml
   skip:
-    # local hooks
     - flake8
     - mypy
     - pylint
-    # hooks that don't work on pre-commit.ci
-    - editorconfig-checker
     - pyright
+    - taplo
 
 repos:
   - repo: meta
@@ -45,7 +43,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/ComPWA/repo-maintenance
-    rev: 0.0.175
+    rev: 0.0.178
     hooks:
       - id: check-dev-files
         args:
@@ -79,6 +77,15 @@ repos:
             .*\.py
           )$
 
+  - repo: local
+    hooks:
+      - id: flake8
+        name: flake8
+        entry: flake8
+        language: system
+        types:
+          - python
+
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
     hooks:
@@ -88,6 +95,15 @@ repos:
     rev: v0.33.0
     hooks:
       - id: markdownlint
+
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: mypy
+        language: system
+        types:
+          - python
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v3.0.0-alpha.6
@@ -99,37 +115,8 @@ repos:
     hooks:
       - id: pydocstyle
 
-  - repo: https://github.com/ComPWA/mirrors-pyright
-    rev: v1.1.301
-    hooks:
-      - id: pyright
-
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v3.3.1
-    hooks:
-      - id: pyupgrade
-        args:
-          - --py36-plus
-
-  # The following tools have to be install locally, because they can also be
-  # used by code editors (e.g. linting and format-on-save).
-
   - repo: local
     hooks:
-      - id: flake8
-        name: flake8
-        entry: flake8
-        language: system
-        types:
-          - python
-
-      - id: mypy
-        name: mypy
-        entry: mypy
-        language: system
-        types:
-          - python
-
       - id: pylint
         name: pylint
         entry: pylint
@@ -139,6 +126,18 @@ repos:
         language: system
         types:
           - python
+
+  - repo: https://github.com/ComPWA/mirrors-pyright
+    rev: v1.1.303
+    hooks:
+      - id: pyright
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.1
+    hooks:
+      - id: pyupgrade
+        args:
+          - --py36-plus
 
   - repo: https://github.com/ComPWA/mirrors-taplo
     rev: v0.8.0
