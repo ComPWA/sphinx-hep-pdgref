@@ -39,15 +39,13 @@
   "flake8.importStrategy": "fromEnvironment",
   "git.rebaseWhenSync": true,
   "github-actions.workflows.pinned.refresh.enabled": true,
-  "github-actions.workflows.pinned.workflows": [
-    ".github/workflows/ci-tests.yml",
-    ".github/workflows/ci-style.yml"
-  ],
+  "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
   "isort.check": true,
   "isort.importStrategy": "fromEnvironment",
   "pylint.importStrategy": "fromEnvironment",
   "python.analysis.autoImportCompletions": false,
   "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.typeCheckingMode": "strict",
   "python.formatting.provider": "black",
   "python.linting.banditEnabled": false,
@@ -66,6 +64,5 @@
     "*/.pydocstyle": true,
     "src/*/*/__init__.py": true,
     "src/*/__init__.py": true
-  },
-  "telemetry.telemetryLevel": "off"
+  }
 }
