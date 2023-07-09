@@ -2,9 +2,13 @@ from typing import Optional
 
 import pytest
 
-from sphinxcontrib.hep.pdgref.entry import (DEFAULT_YEAR, PDGEntry,
-                                            get_first_page, get_page_numbers,
-                                            get_year)
+from sphinxcontrib.hep.pdgref.entry import (
+    DEFAULT_YEAR,
+    PDGEntry,
+    get_first_page,
+    get_page_numbers,
+    get_year,
+)
 
 
 class TestPDGEntry:

@@ -12,8 +12,8 @@ from .entry import PDGEntry
 
 
 class URLPattern(str, Enum):
-    LISTING = "https://pdg.lbl.gov/{0}/listings/rpp{0}-list-{1}.pdf"  # noqa: FS003
-    REVIEW = "https://pdg.lbl.gov/{0}/reviews/rpp{0}-rev-{1}.pdf"  # noqa: FS003
+    LISTING = "https://pdg.lbl.gov/{0}/listings/rpp{0}-list-{1}.pdf"
+    REVIEW = "https://pdg.lbl.gov/{0}/reviews/rpp{0}-rev-{1}.pdf"
 
 
 def create_url(entry: PDGEntry, *, pattern: URLPattern) -> str:
@@ -22,9 +22,11 @@ def create_url(entry: PDGEntry, *, pattern: URLPattern) -> str:
     elif pattern == URLPattern.REVIEW:
         url = _create_review_url(entry)
     else:
-        raise NotImplementedError(f"No implementation for {pattern}")
+        msg = f"No implementation for {pattern}"
+        raise NotImplementedError(msg)
     if " " in url or "," in url:
-        raise ValueError("URL cannot contain spaces or commas")
+        msg = "URL cannot contain spaces or commas"
+        raise ValueError(msg)
     return url
 
 
@@ -54,7 +56,8 @@ def create_link_text(entry: PDGEntry, *, pattern: URLPattern) -> str:
         return _create_short_link_text(entry)
     if pattern == URLPattern.REVIEW:
         return _create_extended_link_text(entry)
-    raise NotImplementedError(f"No implementation for {pattern}")
+    msg = f"No implementation for {pattern}"
+    raise NotImplementedError(msg)
 
 
 def _create_extended_link_text(entry: PDGEntry) -> str:

@@ -26,14 +26,13 @@ def pdgref(pattern: URLPattern) -> RoleFunction:
             link_text = create_link_text(pdg_entry, pattern=pattern)
             url = create_url(pdg_entry, pattern=pattern)
         except ValueError:
-            raise ValueError(  # pylint: disable=raise-missing-from
-                "Badly formatted argument:\n"
-                f"  {rawtext}\n"
-                "This role requires at most 3 semicolon-separated arguments:"
-                " section; [year; [page number(s)]]"
-                ' with page numbers something like "p12", or "pp. 12-15, 17".'
-                " The order does not matter"
+            msg = (
+                f"Badly formatted argument:\n  {rawtext}\nThis role requires at most 3"
+                " semicolon-separated arguments: section; [year; [page number(s)]]"
+                ' with page numbers something like "p12", or "pp. 12-15, 17". The'
+                " order does not matter"
             )
+            raise ValueError(msg)  # pylint: disable=raise-missing-from
         if options is None:
             options = {}
         # cspell:ignore refuri
