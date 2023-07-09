@@ -33,6 +33,11 @@ target-version = [
     'py39',
 ]
 
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+
 [tool.mypy]
 disallow_incomplete_defs = true
 disallow_untyped_defs = true
@@ -81,10 +86,6 @@ reportUnusedFunction = true
 reportUnusedImport = true
 reportUnusedVariable = true
 typeCheckingMode = "strict"
-
-[tool.coverage.run]
-branch = true
-source = ["src"]
 
 [tool.pytest.ini_options]
 addopts = """
