@@ -47,7 +47,7 @@ class PDGEntry:
         PDGEntry(section='Resonances', year=2020, pages=None)
         """
         segments = text.split(";")
-        if len(segments) > 3:
+        if len(segments) > 3:  # noqa: PLR2004
             msg = f'Input string "{text}" contains more than 3 segments'
             raise ValueError(msg)
         section = text

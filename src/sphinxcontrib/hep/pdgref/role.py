@@ -12,7 +12,7 @@ from .url import URLPattern, create_link_text, create_url
 
 
 def pdgref(pattern: URLPattern) -> RoleFunction:
-    def role(
+    def role(  # noqa: PLR0913
         name: str,
         rawtext: str,
         text: str,
@@ -25,14 +25,14 @@ def pdgref(pattern: URLPattern) -> RoleFunction:
             pdg_entry = PDGEntry.from_str(text)
             link_text = create_link_text(pdg_entry, pattern=pattern)
             url = create_url(pdg_entry, pattern=pattern)
-        except ValueError:
+        except ValueError as e:
             msg = (
                 f"Badly formatted argument:\n  {rawtext}\nThis role requires at most 3"
                 " semicolon-separated arguments: section; [year; [page number(s)]]"
                 ' with page numbers something like "p12", or "pp. 12-15, 17". The'
                 " order does not matter"
             )
-            raise ValueError(msg)
+            raise ValueError(msg) from e
         if options is None:
             options = {}
         # cspell:ignore refuri
