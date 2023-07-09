@@ -48,7 +48,7 @@ class TestPDGEntry:
             entry = PDGEntry.from_str(text)
             assert entry == expected
             assert entry.first_page == first_page
-            from_eval = eval(str(entry))  # pylint: disable=eval-used
+            from_eval = eval(str(entry))
             assert entry == from_eval
 
 

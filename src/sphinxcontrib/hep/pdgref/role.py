@@ -12,7 +12,7 @@ from .url import URLPattern, create_link_text, create_url
 
 
 def pdgref(pattern: URLPattern) -> RoleFunction:
-    def role(  # pylint: disable=too-many-arguments, unused-argument
+    def role(
         name: str,
         rawtext: str,
         text: str,
@@ -32,7 +32,7 @@ def pdgref(pattern: URLPattern) -> RoleFunction:
                 ' with page numbers something like "p12", or "pp. 12-15, 17". The'
                 " order does not matter"
             )
-            raise ValueError(msg)  # pylint: disable=raise-missing-from
+            raise ValueError(msg)
         if options is None:
             options = {}
         # cspell:ignore refuri
