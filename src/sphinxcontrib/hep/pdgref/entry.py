@@ -47,8 +47,9 @@ class PDGEntry:
         PDGEntry(section='Resonances', year=2020, pages=None)
         """
         segments = text.split(";")
-        if len(segments) > 3:
-            raise ValueError(f'Input string "{text}" contains more than 3 segments')
+        if len(segments) > 3:  # noqa: PLR2004
+            msg = f'Input string "{text}" contains more than 3 segments'
+            raise ValueError(msg)
         section = text
         year = DEFAULT_YEAR
         pages = None
@@ -69,7 +70,8 @@ def get_first_page(text: str) -> int:
     text = text.strip()
     matches = re.match(r"p?p?\.?\s*(\d+).*", text)
     if matches is None:
-        raise ValueError(f'Badly formatted page numbers "{text}"')
+        msg = f'Badly formatted page numbers "{text}"'
+        raise ValueError(msg)
     first_page_nr = matches.group(1)
     return int(first_page_nr)
 

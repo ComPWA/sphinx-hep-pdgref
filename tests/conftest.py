@@ -2,7 +2,7 @@
 import pytest
 from sphinx.testing.path import path
 
-pytest_plugins = "sphinx.testing.fixtures"  # pylint: disable=invalid-name
+pytest_plugins = "sphinx.testing.fixtures"
 collect_ignore = ["roots"]
 
 

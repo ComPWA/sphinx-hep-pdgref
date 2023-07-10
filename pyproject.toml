@@ -33,6 +33,140 @@ target-version = [
     'py39',
 ]
 
-[tool.isort]
-profile = "black"
-src_paths = ["src", "tests"]
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+
+[tool.mypy]
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+files = [
+    "**/*.py",
+    "**/*.pyi",
+]
+show_error_codes = true
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+check_untyped_defs = true
+disallow_incomplete_defs = false
+disallow_untyped_defs = false
+module = ["tests.*"]
+
+[[tool.mypy.overrides]]
+ignore_errors = true
+module = ["typings.*"]
+
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = ["pyquery.*"]
+
+[tool.pyright]
+exclude = [
+    "**/.git",
+    "**/.ipynb_checkpoints",
+    "**/.mypy_cache",
+    "**/.pytest_cache",
+    "**/.tox",
+    "**/__pycache__",
+    "**/_build",
+]
+reportGeneralTypeIssues = false
+reportMissingImports = false
+reportMissingParameterType = false
+reportMissingTypeArgument = false
+reportUnboundVariable = false
+reportUnknownArgumentType = false
+reportUnknownMemberType = false
+reportUnknownParameterType = false
+reportUnknownVariableType = false
+reportUnusedClass = true
+reportUnusedFunction = true
+reportUnusedImport = true
+reportUnusedVariable = true
+typeCheckingMode = "strict"
+
+[tool.pytest.ini_options]
+addopts = """
+--color=yes
+--doctest-continue-on-failure
+--doctest-modules
+--durations=3"""
+filterwarnings = [
+    "error",
+    "ignore:'imghdr' is deprecated and slated for removal in Python 3.13:DeprecationWarning",
+    "ignore:The distutils package is deprecated.*:DeprecationWarning",
+]
+markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
+testpaths = [
+    "src",
+    "tests",
+]
+
+[tool.ruff]
+extend-select = [
+    "A",
+    "B",
+    "BLE",
+    "C4",
+    "C90",
+    "D",
+    "EM",
+    "ERA",
+    "I",
+    "ICN",
+    "INP",
+    "ISC",
+    "N",
+    "NPY",
+    "PGH",
+    "PIE",
+    "PL",
+    "Q",
+    "RET",
+    "RSE",
+    "RUF",
+    "S",
+    "SIM",
+    "T20",
+    "TCH",
+    "TID",
+    "TRY",
+    "UP",
+    "YTT",
+]
+ignore = [
+    "D101",
+    "D102",
+    "D103",
+    "D105",
+    "D107",
+    "D203",
+    "D213",
+    "D407",
+    "D416",
+    "E501",
+    "SIM108",
+]
+show-fixes = true
+src = [
+    "src",
+    "tests",
+]
+target-version = "py37"
+task-tags = ["cspell"]
+
+[tool.ruff.per-file-ignores]
+"setup.py" = ["D100"]
+"tests/*" = [
+    "D",
+    "INP001",
+    "PGH001",
+    "PLR0913",
+    "PLR2004",
+    "S101",
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"

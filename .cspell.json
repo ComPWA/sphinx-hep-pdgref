@@ -24,14 +24,11 @@
     "*particle*.*ml",
     ".constraints/*.txt",
     ".editorconfig",
-    ".flake8*",
     ".gitignore",
     ".gitpod.*",
     ".mypy.ini",
     ".pre-commit-config.yaml",
     ".prettierignore",
-    ".pydocstyle*",
-    ".pylintrc",
     ".readthedocs.yml",
     ".vscode/*",
     ".vscode/.gitignore",
@@ -55,7 +52,7 @@
     "typings"
   ],
   "language": "en-US",
-  "words": ["ComPWA", "conda", "doctests", "pdgref", "pylint", "pytest"],
+  "words": ["ComPWA", "conda", "doctests", "pdgref", "pytest"],
   "ignoreWords": [
     "MAINT",
     "PYTHONHASHSEED",
