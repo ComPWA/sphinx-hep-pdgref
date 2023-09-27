@@ -45,6 +45,7 @@ repos:
     hooks:
       - id: check-dev-files
         args:
+          - --no-notebooks
           - --repo-name=sphinxcontrib-hep-pdgref
           - --repo-title=sphinxcontrib.hep.pdgref
       - id: format-setup-cfg
@@ -74,11 +75,6 @@ repos:
           (?x)^(
             .*\.py
           )$
-
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.37.0
-    hooks:
-      - id: markdownlint
 
   - repo: local
     hooks:
