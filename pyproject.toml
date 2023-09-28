@@ -96,6 +96,7 @@ addopts = """
 filterwarnings = [
     "error",
     "ignore:'imghdr' is deprecated and slated for removal in Python 3.13:DeprecationWarning",
+    "ignore:.*pkg_resources.*:DeprecationWarning",
     "ignore:The distutils package is deprecated.*:DeprecationWarning",
 ]
 markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
