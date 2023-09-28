@@ -43,6 +43,10 @@ repos:
   - repo: https://github.com/ComPWA/repo-maintenance
     rev: 0.0.192
     hooks:
+      - id: check-dev-files
+        args:
+          - --repo-name=sphinx-hep-pdgref
+          - --repo-title=sphinx-hep-pdgref
       - id: format-setup-cfg
 
   - repo: https://github.com/psf/black

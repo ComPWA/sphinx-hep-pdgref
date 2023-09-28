@@ -2,7 +2,7 @@ from typing import Optional
 
 import pytest
 
-from sphinxcontrib.hep.pdgref.entry import (
+from sphinx_hep_pdgref.entry import (
     DEFAULT_YEAR,
     PDGEntry,
     get_first_page,

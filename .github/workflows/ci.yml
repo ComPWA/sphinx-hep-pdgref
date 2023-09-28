@@ -29,7 +29,7 @@ jobs:
   pytest:
     uses: ComPWA/actions/.github/workflows/pytest.yml@v1
     with:
-      coverage-target: sphinxcontrib
+      coverage-target: sphinx_hep_pdgref
       macos-python-version: "3.9"
       specific-pip-packages: ${{ inputs.specific-pip-packages }}
   style:

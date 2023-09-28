@@ -72,7 +72,6 @@
     "rtfd",
     "sdist",
     "setuptools",
-    "sphinxcontrib",
     "testroot",
     "unittests",
     "venv"
