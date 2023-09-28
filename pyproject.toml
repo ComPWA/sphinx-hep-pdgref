@@ -81,6 +81,7 @@ reportUnknownArgumentType = false
 reportUnknownMemberType = false
 reportUnknownParameterType = false
 reportUnknownVariableType = false
+reportUntypedFunctionDecorator = false
 reportUnusedClass = true
 reportUnusedFunction = true
 reportUnusedImport = true
