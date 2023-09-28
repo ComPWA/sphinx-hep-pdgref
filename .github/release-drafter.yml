@@ -1,4 +1,4 @@
-name-template: sphinxcontrib.hep.pdgref $NEXT_PATCH_VERSION
+name-template: sphinx-hep-pdgref $NEXT_PATCH_VERSION
 tag-template: $NEXT_PATCH_VERSION
 
 references:
@@ -34,4 +34,4 @@ sort-direction: ascending
 template: |
   $CHANGES
 
-  _The full changelog as commits can be found [here](https://github.com/ComPWA/sphinxcontrib-hep-pdgref/compare/$PREVIOUS_TAG...$NEXT_PATCH_VERSION)._
+  _The full changelog as commits can be found [here](https://github.com/ComPWA/sphinx-hep-pdgref/compare/$PREVIOUS_TAG...$NEXT_PATCH_VERSION)._

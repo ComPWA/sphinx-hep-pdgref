@@ -1,7 +1,7 @@
 import pytest
 
-from sphinxcontrib.hep.pdgref.entry import DEFAULT_YEAR, PDGEntry  # type:ignore[import]
-from sphinxcontrib.hep.pdgref.url import (  # type:ignore[import]
+from sphinx_hep_pdgref.entry import DEFAULT_YEAR, PDGEntry  # type:ignore[import]
+from sphinx_hep_pdgref.url import (  # type:ignore[import]
     URLPattern,
     create_link_text,
     create_url,

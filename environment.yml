@@ -1,4 +1,4 @@
-name: sphinxcontrib-hep-pdgref
+name: sphinx-hep-pdgref
 channels:
   - defaults
 dependencies:
