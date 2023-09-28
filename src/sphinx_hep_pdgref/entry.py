@@ -40,7 +40,7 @@ class PDGEntry:
     def from_str(text: str) -> "PDGEntry":
         """Create an entry from the contents of the :code:`pdg` role.
 
-        >>> from sphinxcontrib.hep.pdgref.entry import PDGEntry
+        >>> from sphinx_hep_pdgref.entry import PDGEntry
         >>> PDGEntry.from_str("Resonances; 2018; p.5")
         PDGEntry(section='Resonances', year=2018, pages='5')
         >>> PDGEntry.from_str("Resonances")

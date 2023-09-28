@@ -1,15 +1,15 @@
 # PDG role for Sphinx
 
-[![PyPI package](https://badge.fury.io/py/sphinxcontrib-hep-pdgref.svg)](https://pypi.org/project/sphinxcontrib-hep-pdgref)
-[![Supported Python versions](https://img.shields.io/pypi/pyversions/sphinxcontrib-hep-pdgref)](https://pypi.org/project/sphinxcontrib-hep-pdgref)
+[![PyPI package](https://badge.fury.io/py/sphinx-hep-pdgref.svg)](https://pypi.org/project/sphinx-hep-pdgref)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/sphinx-hep-pdgref)](https://pypi.org/project/sphinx-hep-pdgref)
 [![BSD 3-Clause license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Open in Visual Studio Code](https://img.shields.io/badge/vscode-open-blue?logo=visualstudiocode)](https://open.vscode.dev/ComPWA/sphinxcontrib-hep-pdgref)
-[![GitPod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ComPWA/sphinxcontrib-hep-pdgref)
-[![Test coverage](https://codecov.io/gh/ComPWA/sphinxcontrib-hep-pdgref/branch/main/graph/badge.svg?token=SS8ZB8J11N)](https://codecov.io/gh/ComPWA/sphinxcontrib-hep-pdgref)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/dbe042deb2914f6098eb98586d3983fe)](https://www.codacy.com/gh/ComPWA/sphinxcontrib-hep-pdgref)
-[![CI status](https://github.com/ComPWA/sphinxcontrib-hep-pdgref/workflows/CI-tests/badge.svg)](https://github.com/ComPWA/sphinxcontrib-hep-pdgref/actions?query=branch%3Amain+workflow%3ACI-tests)
+[![Open in Visual Studio Code](https://img.shields.io/badge/vscode-open-blue?logo=visualstudiocode)](https://open.vscode.dev/ComPWA/sphinx-hep-pdgref)
+[![GitPod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ComPWA/sphinx-hep-pdgref)
+[![Test coverage](https://codecov.io/gh/ComPWA/sphinx-hep-pdgref/branch/main/graph/badge.svg?token=SS8ZB8J11N)](https://codecov.io/gh/ComPWA/sphinx-hep-pdgref)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/dbe042deb2914f6098eb98586d3983fe)](https://www.codacy.com/gh/ComPWA/sphinx-hep-pdgref)
+[![CI status](https://github.com/ComPWA/sphinx-hep-pdgref/workflows/CI-tests/badge.svg)](https://github.com/ComPWA/sphinx-hep-pdgref/actions?query=branch%3Amain+workflow%3ACI-tests)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy.readthedocs.io)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ComPWA/sphinxcontrib-hep-pdgref/main.svg)](https://results.pre-commit.ci/latest/github/ComPWA/sphinxcontrib-hep-pdgref/main)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ComPWA/sphinx-hep-pdgref/main.svg)](https://results.pre-commit.ci/latest/github/ComPWA/sphinx-hep-pdgref/main)
 [![Spelling checked](https://img.shields.io/badge/cspell-checked-brightgreen.svg)](https://github.com/streetsidesoftware/cspell/tree/master/packages/cspell)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -24,17 +24,17 @@ that makes it easy to refer to PDF files of reviews and particle listings in the
 Just install through [PyPI](https://pypi.org) with `pip`:
 
 ```bash
-pip install sphinxcontrib-hep-pdgref
+pip install sphinx-hep-pdgref
 ```
 
 Next, in your
 [Sphinx configuration file](https://www.sphinx-doc.org/en/master/usage/configuration.html)
-(`conf.py`), add `"sphinxcontrib.hep.pdgref"` to your `extensions`:
+(`conf.py`), add `"sphinx_hep_pdgref"` to your `extensions`:
 
 ```python
 extensions = [
     # ...
-    "sphinxcontrib.hep.pdgref",
+    "sphinx_hep_pdgref",
     # ...
 ]
 ```

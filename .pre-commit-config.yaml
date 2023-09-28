@@ -46,8 +46,8 @@ repos:
       - id: check-dev-files
         args:
           - --no-notebooks
-          - --repo-name=sphinxcontrib-hep-pdgref
-          - --repo-title=sphinxcontrib.hep.pdgref
+          - --repo-name=sphinx-hep-pdgref
+          - --repo-title=sphinx-hep-pdgref
       - id: format-setup-cfg
 
   - repo: https://github.com/psf/black
