@@ -43,10 +43,6 @@ repos:
   - repo: https://github.com/ComPWA/repo-maintenance
     rev: 0.0.192
     hooks:
-      - id: check-dev-files
-        args:
-          - --repo-name=sphinxcontrib-hep-pdgref
-          - --repo-title=sphinxcontrib.hep.pdgref
       - id: format-setup-cfg
 
   - repo: https://github.com/psf/black
@@ -74,11 +70,6 @@ repos:
           (?x)^(
             .*\.py
           )$
-
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.35.0
-    hooks:
-      - id: markdownlint
 
   - repo: local
     hooks:
