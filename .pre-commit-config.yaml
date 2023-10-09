@@ -46,6 +46,7 @@ repos:
       - id: check-dev-files
         args:
           - --no-notebooks
+          - --no-prettierrc
           - --repo-name=sphinx-hep-pdgref
           - --repo-title=sphinx-hep-pdgref
       - id: format-setup-cfg
