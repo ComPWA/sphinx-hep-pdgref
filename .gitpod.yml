@@ -15,12 +15,12 @@ vscode:
   extensions:
     - charliermarsh.ruff
     - christian-kohler.path-intellisense
-    - davidanson.vscode-markdownlint
     - eamodio.gitlens
     - editorconfig.editorconfig
     - esbenp.prettier-vscode
     - garaioag.garaio-vscode-unwanted-recommendations
     - github.vscode-github-actions
+    - ms-python.black-formatter
     - ms-python.mypy-type-checker
     - ms-python.python
     - ms-python.vscode-pylance

@@ -37,7 +37,6 @@ target-version = [
 branch = true
 source = ["src"]
 
-
 [tool.mypy]
 disallow_incomplete_defs = true
 disallow_untyped_defs = true
@@ -149,6 +148,7 @@ ignore = [
     "D416",
     "E501",
     "SIM108",
+    "UP036",
 ]
 show-fixes = true
 src = [
@@ -171,3 +171,17 @@ task-tags = ["cspell"]
 
 [tool.ruff.pydocstyle]
 convention = "google"
+
+[tool.tomlsort]
+all = false
+ignore_case = true
+in_place = true
+sort_first = [
+    "build-system",
+    "project",
+    "tool.setuptools",
+    "tool.setuptools_scm",
+]
+sort_table_keys = true
+spaces_indent_inline_array = 4
+trailing_comma_inline_array = true
