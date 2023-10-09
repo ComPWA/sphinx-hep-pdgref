@@ -148,6 +148,7 @@ ignore = [
     "D416",
     "E501",
     "SIM108",
+    "UP036",
 ]
 show-fixes = true
 src = [
