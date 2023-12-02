@@ -25,12 +25,13 @@ exclude = '''
 include = '\.pyi?$'
 preview = true
 target-version = [
-    'py310',
-    'py311',
-    'py36',
-    'py37',
-    'py38',
-    'py39',
+    "py310",
+    "py311",
+    "py312",
+    "py36",
+    "py37",
+    "py38",
+    "py39",
 ]
 
 [tool.coverage.run]
