@@ -89,11 +89,12 @@ reportUnusedVariable = true
 typeCheckingMode = "strict"
 
 [tool.pytest.ini_options]
-addopts = """
---color=yes
---doctest-continue-on-failure
---doctest-modules
---durations=3"""
+addopts = [
+    "--color=yes",
+    "--doctest-continue-on-failure",
+    "--doctest-modules",
+    "--durations=3",
+]
 filterwarnings = [
     "error",
     "ignore:'imghdr' is deprecated and slated for removal in Python 3.13:DeprecationWarning",
