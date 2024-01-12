@@ -19,7 +19,6 @@ vscode:
     - eamodio.gitlens
     - editorconfig.editorconfig
     - esbenp.prettier-vscode
-    - garaioag.garaio-vscode-unwanted-recommendations
     - github.vscode-github-actions
     - ms-python.black-formatter
     - ms-python.mypy-type-checker
@@ -27,6 +26,7 @@ vscode:
     - ms-python.vscode-pylance
     - redhat.vscode-yaml
     - ryanluker.vscode-coverage-gutters
+    - Soulcode.vscode-unwanted-extensions
     - stkb.rewrap
     - streetsidesoftware.code-spell-checker
     - tamasfe.even-better-toml
