@@ -39,4 +39,4 @@ def pdgref(pattern: URLPattern) -> RoleFunction:
         node = nodes.reference(rawtext, link_text, refuri=url, **options)
         return [node], []
 
-    return role
+    return role  # type:ignore[return-value]
