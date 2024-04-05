@@ -12,8 +12,9 @@ Note the page number. This is `a trick
 directly lead to the correct page number when clicking the generated link.
 """
 
+from __future__ import annotations
+
 import re
-from typing import Optional
 
 from attrs import field, frozen
 
@@ -26,8 +27,8 @@ class PDGEntry:
 
     section: str
     year: int
-    pages: Optional[str]
-    first_page: Optional[int] = field(init=False, repr=False)
+    pages: str | None
+    first_page: int | None = field(init=False, repr=False)
 
     def __attrs_post_init__(self) -> None:
         if self.pages is None:
@@ -37,7 +38,7 @@ class PDGEntry:
         object.__setattr__(self, "first_page", first_page)
 
     @staticmethod
-    def from_str(text: str) -> "PDGEntry":
+    def from_str(text: str) -> PDGEntry:
         """Create an entry from the contents of the :code:`pdg` role.
 
         >>> from sphinx_hep_pdgref.entry import PDGEntry
@@ -76,7 +77,7 @@ def get_first_page(text: str) -> int:
     return int(first_page_nr)
 
 
-def get_page_numbers(text: str) -> Optional[str]:
+def get_page_numbers(text: str) -> str | None:
     text = text.strip()
     matches = re.match(r"pp?\.?\s*(\d+.*)", text)
     if matches is None:
@@ -85,7 +86,7 @@ def get_page_numbers(text: str) -> Optional[str]:
     return page_nr_def.replace(" ", "")
 
 
-def get_year(text: str) -> Optional[int]:
+def get_year(text: str) -> int | None:
     text = text.strip()
     matches = re.match(r"\d{4}", text)
     if matches is None:

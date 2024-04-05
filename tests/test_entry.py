@@ -1,4 +1,4 @@
-from typing import Optional
+from __future__ import annotations
 
 import pytest
 
@@ -35,8 +35,8 @@ class TestPDGEntry:
     def test_from_str(
         self,
         text: str,
-        expected: Optional[PDGEntry],
-        first_page: Optional[int],
+        expected: PDGEntry | None,
+        first_page: int | None,
     ):
         if expected is None:
             with pytest.raises(
@@ -67,7 +67,7 @@ class TestPDGEntry:
     ],
 )
 def test_get_page_numbers(
-    text: str, formatted_pages: Optional[str], first_page: Optional[int]
+    text: str, formatted_pages: str | None, first_page: int | None
 ):
     assert get_page_numbers(text) == formatted_pages
     if first_page is None:
@@ -93,5 +93,5 @@ def test_get_page_numbers(
         ("p. 12-15", None),
     ],
 )
-def test_get_year(text: str, expected: Optional[int]):
+def test_get_year(text: str, expected: int | None):
     assert get_year(text) == expected
