@@ -13,17 +13,6 @@ repos:
       - id: check-hooks-apply
       - id: check-useless-excludes
 
-  - repo: https://github.com/ComPWA/policy
-    rev: 0.2.2
-    hooks:
-      - id: check-dev-files
-        args:
-          - --no-notebooks
-          - --no-prettierrc
-          - --repo-name=sphinx-hep-pdgref
-          - --repo-title=sphinx-hep-pdgref
-      - id: format-setup-cfg
-
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
@@ -61,6 +50,16 @@ repos:
     rev: 1.16.0
     hooks:
       - id: blacken-docs
+
+  - repo: https://github.com/ComPWA/policy
+    rev: 0.2.2
+    hooks:
+      - id: check-dev-files
+        args:
+          - --no-notebooks
+          - --no-prettierrc
+          - --repo-name=sphinx-hep-pdgref
+          - --repo-title=sphinx-hep-pdgref
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
     rev: v8.6.1

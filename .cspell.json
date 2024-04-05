@@ -29,8 +29,6 @@
     ".vscode/*",
     "codecov.yml",
     "pyproject.toml",
-    "setup.cfg",
-    "setup.py",
     "tox.ini"
   ],
   "language": "en-US",
