@@ -1,13 +1,16 @@
 """Link to PDG reviews and listings in Sphinx documentation."""
 
-from typing import Any, Dict
+from __future__ import annotations
 
-from sphinx.application import Sphinx
+from typing import TYPE_CHECKING, Any
 
 from .role import URLPattern, pdgref
 
+if TYPE_CHECKING:
+    from sphinx.application import Sphinx
 
-def setup(app: Sphinx) -> Dict[str, Any]:
+
+def setup(app: Sphinx) -> dict[str, Any]:
     app.add_role("pdg-listing", role=pdgref(pattern=URLPattern.LISTING))
     app.add_role("pdg-review", role=pdgref(pattern=URLPattern.REVIEW))
     return {

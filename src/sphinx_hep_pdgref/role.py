@@ -1,14 +1,18 @@
 """Link to PDG reviews and listings in Sphinx documentation."""
 
-from typing import Dict, List, Optional, Tuple
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 
 from docutils import nodes
-from docutils.nodes import Node, system_message
-from docutils.parsers.rst.states import Inliner
-from sphinx.util.typing import RoleFunction
 
 from .entry import PDGEntry
 from .url import URLPattern, create_link_text, create_url
+
+if TYPE_CHECKING:
+    from docutils.nodes import Node, system_message
+    from docutils.parsers.rst.states import Inliner
+    from sphinx.util.typing import RoleFunction
 
 
 def pdgref(pattern: URLPattern) -> RoleFunction:
@@ -18,9 +22,9 @@ def pdgref(pattern: URLPattern) -> RoleFunction:
         text: str,
         lineno: int,
         inliner: Inliner,
-        options: Optional[Dict] = None,
-        content: Optional[List[str]] = None,
-    ) -> Tuple[List[Node], List[system_message]]:
+        options: dict | None = None,
+        content: list[str] | None = None,
+    ) -> tuple[list[Node], list[system_message]]:
         try:
             pdg_entry = PDGEntry.from_str(text)
             link_text = create_link_text(pdg_entry, pattern=pattern)
