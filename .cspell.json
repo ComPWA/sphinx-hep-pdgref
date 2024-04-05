@@ -51,6 +51,7 @@
     "pypi",
     "pyquery",
     "pyright",
+    "redeclaration",
     "rtfd",
     "sdist",
     "setuptools",
