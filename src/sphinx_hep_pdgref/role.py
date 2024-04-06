@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 
 def pdgref(pattern: URLPattern) -> RoleFunction:
-    def role(  # noqa: PLR0913
+    def role(  # noqa: PLR0913, PLR0917
         name: str,
         rawtext: str,
         text: str,

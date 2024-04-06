@@ -17,7 +17,7 @@ if sphinx_version < "7.2":
     from sphinx.testing.path import path
 
     @pytest.fixture(scope="session")
-    def rootdir() -> path:
+    def rootdir() -> path:  # pyright:ignore[reportRedeclaration]
         return path(__file__).parent.abspath() / "roots"
 
 else:

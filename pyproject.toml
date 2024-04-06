@@ -48,9 +48,6 @@ dev = [
     "sphinx-hep-pdgref[test]",
     "tox >=1.9", # for skip_install, use_develop
 ]
-format = [
-    "black",
-]
 lint = [
     "ruff",
     "sphinx-hep-pdgref[mypy]",
@@ -62,9 +59,10 @@ mypy = [
 ]
 sty = [
     "pre-commit >=1.4.0",
+    "ruff",
     "sphinx-hep-pdgref[format]",
     "sphinx-hep-pdgref[lint]",
-    "sphinx-hep-pdgref[test]", # for pytest type hints
+    "sphinx-hep-pdgref[test]",
 ]
 test = [
     "pyquery", # for checking HTML output
@@ -98,31 +96,6 @@ where = ["src"]
 
 [tool.setuptools_scm]
 write_to = "src/version.py"
-
-[tool.black]
-exclude = '''
-/(
-    .*\.egg-info
-    | .*build
-    | \.eggs
-    | \.git
-    | \.pytest_cache
-    | \.tox
-    | \.venv
-    | \.vscode
-    | dist
-)/
-'''
-include = '\.pyi?$'
-preview = true
-target-version = [
-    "py310",
-    "py311",
-    "py312",
-    "py37",
-    "py38",
-    "py39",
-]
 
 [tool.coverage.run]
 branch = true
@@ -197,6 +170,19 @@ testpaths = [
 ]
 
 [tool.ruff]
+preview = true
+show-fixes = true
+src = [
+    "src",
+    "tests",
+]
+target-version = "py37"
+
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "lf"
+
+[tool.ruff.lint]
 extend-select = [
     "A",
     "B",
@@ -240,30 +226,31 @@ ignore = [
     "D407",
     "D416",
     "E501",
+    "ISC001",
+    "PLW1514",
     "SIM108",
     "UP036",
 ]
-show-fixes = true
-src = [
-    "src",
-    "tests",
-]
-target-version = "py37"
 task-tags = ["cspell"]
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+
+[tool.ruff.lint.per-file-ignores]
 "setup.py" = ["D100"]
 "tests/*" = [
     "D",
     "INP001",
     "PGH001",
+    "PLC2701",
     "PLR0913",
     "PLR2004",
+    "PLR6301",
     "S101",
     "T20",
 ]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.tomlsort]
