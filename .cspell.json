@@ -32,7 +32,7 @@
     "tox.ini"
   ],
   "language": "en-US",
-  "words": ["ComPWA", "conda", "doctests", "pdgref", "pytest"],
+  "words": ["ComPWA", "conda", "doctests", "pdgref", "PyPA", "pytest"],
   "ignoreWords": [
     "MAINT",
     "PYTHONHASHSEED",
