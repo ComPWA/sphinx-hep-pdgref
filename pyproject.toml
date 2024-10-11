@@ -16,8 +16,6 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python",
     "Topic :: Documentation",
@@ -40,7 +38,7 @@ keywords = [
 license = {text = "BSD 3-Clause License"}
 maintainers = [{email = "compwa-admin@ep1.rub.de"}]
 name = "sphinx-hep-pdgref"
-requires-python = ">=3.7"
+requires-python = ">=3.9"
 
 [project.optional-dependencies]
 dev = [
@@ -176,7 +174,7 @@ src = [
     "src",
     "tests",
 ]
-target-version = "py37"
+target-version = "py39"
 
 [tool.ruff.format]
 docstring-code-format = true
