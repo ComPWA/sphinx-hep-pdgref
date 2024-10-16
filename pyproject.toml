@@ -260,7 +260,6 @@ skip_missing_interpreters = True
 skipsdist = True
 
 [testenv]
-description = Run all unit tests
 allowlist_externals =
     pytest
 commands =
@@ -269,6 +268,7 @@ commands =
         --cov-report=html \
         --cov-report=xml \
         --cov=sphinx_hep_pdgref
+description = Run all unit tests
 passenv = *
 
 [testenv:sty]
