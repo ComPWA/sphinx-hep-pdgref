@@ -56,7 +56,7 @@ mypy = [
     "types-setuptools",
 ]
 sty = [
-    "pre-commit >=1.4.0",
+    "pre-commit-uv",
     "ruff",
     "sphinx-hep-pdgref[format]",
     "sphinx-hep-pdgref[lint]",
@@ -93,6 +93,8 @@ namespaces = false
 where = ["src"]
 
 [tool.setuptools_scm]
+local_scheme = "no-local-version"
+version_scheme = "only-version"
 write_to = "src/version.py"
 
 [tool.coverage.run]
@@ -130,6 +132,7 @@ exclude = [
     "**/.mypy_cache",
     "**/.pytest_cache",
     "**/.tox",
+    "**/.venv/",
     "**/__pycache__",
     "**/_build",
 ]
@@ -174,7 +177,6 @@ src = [
     "src",
     "tests",
 ]
-target-version = "py39"
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -244,6 +246,37 @@ sort_first = [
     "tool.setuptools",
     "tool.setuptools_scm",
 ]
-sort_table_keys = true
 spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist =
+    py,
+    sty,
+skip_install = True
+skip_missing_interpreters = True
+skipsdist = True
+
+[testenv]
+allowlist_externals =
+    pytest
+commands =
+    pytest {posargs:src tests} \
+        --cov-fail-under=90 \
+        --cov-report=html \
+        --cov-report=xml \
+        --cov=sphinx_hep_pdgref
+description = Run all unit tests
+passenv = *
+
+[testenv:sty]
+allowlist_externals =
+    pre-commit
+commands =
+    pre-commit run --all-files {posargs}
+description = Perform all linting, formatting, and spelling checks
+setenv =
+    SKIP = pyright
+"""

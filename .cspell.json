@@ -22,14 +22,13 @@
   "ignorePaths": [
     "**/.cspell.json",
     ".editorconfig",
+    ".envrc",
     ".gitignore",
-    ".gitpod.*",
     ".pre-commit-config.yaml",
     ".prettierignore",
     ".vscode/*",
     "codecov.yml",
-    "pyproject.toml",
-    "tox.ini"
+    "pyproject.toml"
   ],
   "language": "en-US",
   "words": ["ComPWA", "conda", "doctests", "pdgref", "PyPA", "pytest"],
