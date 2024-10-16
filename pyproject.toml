@@ -273,14 +273,11 @@ commands =
 passenv = *
 
 [testenv:sty]
-description = Perform all linting, formatting, and spelling checks
-setenv =
-    SKIP = mypy, pyright
 allowlist_externals =
-    bash
-    mypy
     pre-commit
 commands =
-    mypy src tests # run separately because of potential caching problems
-    pre-commit run {posargs} -a
+    pre-commit run --all-files {posargs}
+description = Perform all linting, formatting, and spelling checks
+setenv =
+    SKIP = pyright
 """
