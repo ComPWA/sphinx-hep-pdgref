@@ -43,6 +43,7 @@ prof/
 *venv/
 .tox/
 pyvenv*/
+uv.lock
 
 # Settings
 .idea/

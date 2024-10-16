@@ -12,7 +12,6 @@ on:
       - epic/*
     paths:
       - .pre-commit-config.yaml
-      - uv.lock
   workflow_dispatch:
 
 jobs:
