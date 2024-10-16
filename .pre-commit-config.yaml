@@ -4,6 +4,7 @@ ci:
   skip:
     - mypy
     - pyright
+    - uv-lock
 
 repos:
   - repo: meta
@@ -11,14 +12,12 @@ repos:
       - id: check-hooks-apply
       - id: check-useless-excludes
 
-  - repo: /data/local/redeboer/work/ComPWA/policy
-    rev: 565f235682bdafe8ea5c0d7e88220c95a919a26f
+  - repo: https://github.com/ComPWA/policy
+    rev: 0.5.0rc9
     hooks:
       - id: check-dev-files
         args:
-          - --no-prettierrc
           - --repo-name=sphinx-hep-pdgref
-          - --repo-title=sphinx-hep-pdgref
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.6.9
@@ -103,6 +102,6 @@ repos:
       - id: pyright
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.4.20
+    rev: 0.4.22
     hooks:
       - id: uv-lock
