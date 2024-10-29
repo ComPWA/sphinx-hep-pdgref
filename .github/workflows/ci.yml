@@ -28,7 +28,7 @@ on:
 
 jobs:
   pytest:
-    uses: ComPWA/actions/.github/workflows/pytest.yml@v2
+    uses: ComPWA/actions/.github/workflows/pytest.yml@v2.1
     with:
       coverage-target: sphinx_hep_pdgref
       macos-python-version: "3.9"
@@ -37,4 +37,4 @@ jobs:
     if: inputs.specific-pip-packages == ''
     secrets:
       token: ${{ secrets.PAT }}
-    uses: ComPWA/actions/.github/workflows/pre-commit.yml@v2
+    uses: ComPWA/actions/.github/workflows/pre-commit.yml@v2.1
