@@ -44,7 +44,6 @@ requires-python = ">=3.9"
 dev = [
     "sphinx-hep-pdgref[sty]",
     "sphinx-hep-pdgref[test]",
-    "tox >=1.9", # for skip_install, use_develop
 ]
 lint = [
     "ruff",
@@ -56,7 +55,6 @@ mypy = [
     "types-setuptools",
 ]
 sty = [
-    "pre-commit-uv",
     "ruff",
     "sphinx-hep-pdgref[format]",
     "sphinx-hep-pdgref[lint]",
