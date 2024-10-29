@@ -57,15 +57,14 @@ dev = [
     {include-group = "test"},
 ]
 style = [
-    "mypy >=0.730",
+    "mypy",
     {include-group = "types"},
 ]
 test = [
-    "pyquery", # for checking HTML output
+    "pyquery",
     "pytest",
     "pytest-cov",
     "pytest-xdist",
-    'importlib-metadata; python_version <"3.8.0"',
 ]
 types = [
     "pytest",
