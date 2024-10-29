@@ -40,34 +40,6 @@ maintainers = [{email = "compwa-admin@ep1.rub.de"}]
 name = "sphinx-hep-pdgref"
 requires-python = ">=3.9"
 
-[project.optional-dependencies]
-dev = [
-    "sphinx-hep-pdgref[sty]",
-    "sphinx-hep-pdgref[test]",
-]
-lint = [
-    "ruff",
-    "sphinx-hep-pdgref[mypy]",
-]
-mypy = [
-    "mypy >=0.730", # attrs and error code support
-    "types-docutils",
-    "types-setuptools",
-]
-sty = [
-    "ruff",
-    "sphinx-hep-pdgref[format]",
-    "sphinx-hep-pdgref[lint]",
-    "sphinx-hep-pdgref[test]",
-]
-test = [
-    "pyquery", # for checking HTML output
-    "pytest",
-    "pytest-cov",
-    "pytest-xdist",
-    'importlib-metadata; python_version <"3.8.0"',
-]
-
 [project.readme]
 content-type = "text/markdown"
 file = "README.md"
@@ -77,6 +49,29 @@ Changelog = "https://github.com/ComPWA/sphinx-hep-pdgref/releases"
 Documentation = "https://github.com/ComPWA/sphinx-hep-pdgref/blob/main/README.md"
 Source = "https://github.com/ComPWA/sphinx-hep-pdgref"
 Tracker = "https://github.com/ComPWA/sphinx-hep-pdgref/issues"
+
+[dependency-groups]
+dev = [
+    "ruff",
+    {include-group = "style"},
+    {include-group = "test"},
+]
+style = [
+    "mypy >=0.730",
+    {include-group = "types"},
+]
+test = [
+    "pyquery", # for checking HTML output
+    "pytest",
+    "pytest-cov",
+    "pytest-xdist",
+    'importlib-metadata; python_version <"3.8.0"',
+]
+types = [
+    "pytest",
+    "types-docutils",
+    "types-setuptools",
+]
 
 [tool.setuptools]
 include-package-data = true
