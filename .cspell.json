@@ -1,5 +1,4 @@
 {
-  "version": "0.2",
   "enableFiletypes": [
     "git-commit",
     "github-actions-workflow",
@@ -30,16 +29,6 @@
     "codecov.yml",
     "pyproject.toml"
   ],
-  "language": "en-US",
-  "words": [
-    "ComPWA",
-    "conda",
-    "doctests",
-    "pdgref",
-    "PyPA",
-    "pyproject",
-    "pytest"
-  ],
   "ignoreWords": [
     "MAINT",
     "bdist",
@@ -63,5 +52,16 @@
     "unittests",
     "venv"
   ],
-  "useGitignore": true
+  "language": "en-US",
+  "useGitignore": true,
+  "version": "0.2",
+  "words": [
+    "ComPWA",
+    "conda",
+    "doctests",
+    "pdgref",
+    "PyPA",
+    "pyproject",
+    "pytest"
+  ]
 }
