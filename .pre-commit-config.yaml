@@ -12,14 +12,14 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/ComPWA/policy
-    rev: 0.5.5
+    rev: 0.5.8
     hooks:
       - id: check-dev-files
         args:
           - --repo-name=sphinx-hep-pdgref
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.7.1
+    rev: v0.8.6
     hooks:
       - id: ruff
         args: [--fix]
@@ -54,7 +54,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/ComPWA/prettier-pre-commit
-    rev: v3.3.3
+    rev: v3.4.2
     hooks:
       - id: prettier
 
@@ -64,14 +64,14 @@ repos:
       - id: taplo-format
 
   - repo: https://github.com/pappasam/toml-sort
-    rev: v0.23.1
+    rev: v0.24.2
     hooks:
       - id: toml-sort
         args:
           - --in-place
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v8.15.2
+    rev: v8.17.0
     hooks:
       - id: cspell
 
@@ -96,6 +96,6 @@ repos:
           - python
 
   - repo: https://github.com/ComPWA/pyright-pre-commit
-    rev: v1.1.386
+    rev: v1.1.391
     hooks:
       - id: pyright
