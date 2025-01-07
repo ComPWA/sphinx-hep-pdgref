@@ -18,6 +18,6 @@ if sphinx_version < "7.2":
 else:
     from pathlib import Path
 
-    @pytest.fixture(scope="session")
+    @pytest.fixture(scope="session")  # type:ignore[misc]
     def rootdir() -> Path:
         return Path(__file__).parent.absolute() / "roots"
