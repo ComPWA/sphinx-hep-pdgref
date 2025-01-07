@@ -63,5 +63,6 @@
     "testroot",
     "unittests",
     "venv"
-  ]
+  ],
+  "useGitignore": true
 }
