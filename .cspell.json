@@ -42,7 +42,6 @@
   ],
   "ignoreWords": [
     "MAINT",
-    "PYTHONHASHSEED",
     "bdist",
     "codacy",
     "codecov",
