@@ -1,11 +1,6 @@
-import sys
+from importlib.metadata import version
 
 import pytest
-
-if sys.version_info < (3, 8):
-    from importlib_metadata import version
-else:
-    from importlib.metadata import version
 
 pytest_plugins = "sphinx.testing.fixtures"
 collect_ignore = ["roots"]
