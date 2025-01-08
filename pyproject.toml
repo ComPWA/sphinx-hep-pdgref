@@ -239,36 +239,37 @@ sort_first = [
     "project",
     "tool.setuptools",
     "tool.setuptools_scm",
+    "tool.tox.env_run_base",
 ]
 spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
 
 [tool.tox]
-legacy_tox_ini = """
-[tox]
-envlist =
-    py,
-    sty,
-skip_install = True
-skip_missing_interpreters = True
-skipsdist = True
+env_list = [
+    "py",
+    "sty",
+]
+no_package = true
+requires = ["tox>=4.21.0"]
+skip_install = true
+skip_missing_interpreters = true
 
-[testenv]
-allowlist_externals =
-    pytest
-commands =
-    pytest {posargs:src tests} \
-        --cov-fail-under=90 \
-        --cov-report=html \
-        --cov-report=xml \
-        --cov=sphinx_hep_pdgref
-description = Run all unit tests
-passenv = *
+[tool.tox.env_run_base]
+allowlist_externals = ["pytest"]
+commands = [
+    [
+        "pytest",
+        {replace = "posargs", default = ["src", "tests"], extend = true},
+        "--cov-fail-under=90",
+        "--cov-report=html",
+        "--cov-report=xml",
+        "--cov=sphinx_hep_pdgref",
+    ],
+]
+description = "Run all unit tests"
+pass_env = ["*"]
 
-[testenv:sty]
-allowlist_externals =
-    pre-commit
-commands =
-    pre-commit run --all-files {posargs}
-description = Perform all linting, formatting, and spelling checks
-"""
+[tool.tox.env.sty]
+allowlist_externals = ["pre-commit"]
+commands = [["pre-commit", "run", "--all-files", {replace = "posargs", extend = true}]]
+description = "Perform all linting, formatting, and spelling checks"
