@@ -5,7 +5,6 @@
 [![BSD 3-Clause license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Open in Visual Studio Code](https://img.shields.io/badge/vscode-open-blue?logo=visualstudiocode)](https://open.vscode.dev/ComPWA/sphinx-hep-pdgref)
 [![Test coverage](https://codecov.io/gh/ComPWA/sphinx-hep-pdgref/branch/main/graph/badge.svg?token=SS8ZB8J11N)](https://codecov.io/gh/ComPWA/sphinx-hep-pdgref)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/dbe042deb2914f6098eb98586d3983fe)](https://www.codacy.com/gh/ComPWA/sphinx-hep-pdgref)
 [![CI status](https://github.com/ComPWA/sphinx-hep-pdgref/workflows/CI-tests/badge.svg)](https://github.com/ComPWA/sphinx-hep-pdgref/actions?query=branch%3Amain+workflow%3ACI-tests)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy.readthedocs.io)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ComPWA/sphinx-hep-pdgref/main.svg)](https://results.pre-commit.ci/latest/github/ComPWA/sphinx-hep-pdgref/main)

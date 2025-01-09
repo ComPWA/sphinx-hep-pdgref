@@ -33,7 +33,6 @@
   "ignoreWords": [
     "MAINT",
     "bdist",
-    "codacy",
     "codecov",
     "commitlint",
     "docutils",
