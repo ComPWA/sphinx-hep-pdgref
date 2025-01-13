@@ -12,14 +12,14 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/ComPWA/policy
-    rev: 0.5.14
+    rev: 0.5.15
     hooks:
       - id: check-dev-files
         args:
           - --repo-name=sphinx-hep-pdgref
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.9.0
+    rev: v0.9.1
     hooks:
       - id: ruff
         args: [--fix]
