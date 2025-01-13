@@ -1,5 +1,4 @@
 {
-  "version": "0.2",
   "enableFiletypes": [
     "git-commit",
     "github-actions-workflow",
@@ -26,25 +25,14 @@
     ".gitignore",
     ".pre-commit-config.yaml",
     ".prettierignore",
+    ".taplo.toml",
     ".vscode/*",
     "codecov.yml",
     "pyproject.toml"
   ],
-  "language": "en-US",
-  "words": [
-    "ComPWA",
-    "conda",
-    "doctests",
-    "pdgref",
-    "PyPA",
-    "pyproject",
-    "pytest"
-  ],
   "ignoreWords": [
     "MAINT",
-    "PYTHONHASHSEED",
     "bdist",
-    "codacy",
     "codecov",
     "commitlint",
     "docutils",
@@ -63,5 +51,17 @@
     "testroot",
     "unittests",
     "venv"
+  ],
+  "language": "en-US",
+  "useGitignore": true,
+  "version": "0.2",
+  "words": [
+    "ComPWA",
+    "conda",
+    "doctests",
+    "pdgref",
+    "PyPA",
+    "pyproject",
+    "pytest"
   ]
 }
