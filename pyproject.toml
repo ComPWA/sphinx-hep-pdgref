@@ -261,7 +261,6 @@ skip_install = true
 skip_missing_interpreters = true
 
 [tool.tox.env_run_base]
-allowlist_externals = ["pytest"]
 commands = [
     [
         "pytest",
@@ -272,21 +271,15 @@ commands = [
         "--cov=sphinx_hep_pdgref",
     ],
 ]
-description = "Run all unit tests"
+dependency_groups = ["test"]
+description = "Run test suite on Python {env_name}"
+no_package = false
 pass_env = ["*"]
+runner = "uv-venv-lock-runner"
+skip_install = false
+skip_missing_interpreters = false
 
 [tool.tox.env.cov]
-allowlist_externals = ["pytest"]
-commands = [
-    [
-        "pytest",
-        {replace = "posargs", default = ["src", "tests"], extend = true},
-        "--cov-fail-under=88",
-        "--cov-report=html",
-        "--cov-report=xml",
-        "--cov=sphinx_hep_pdgref",
-    ],
-]
 description = "Compute test coverage"
 
 [tool.tox.env.sty]
