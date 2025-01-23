@@ -252,7 +252,11 @@ trailing_comma_inline_array = true
 
 [tool.tox]
 env_list = [
-    "py",
+    "3.9",
+    "3.10",
+    "3.11",
+    "3.12",
+    "3.13",
     "sty",
 ]
 no_package = true
@@ -286,3 +290,12 @@ description = "Compute test coverage"
 allowlist_externals = ["pre-commit"]
 commands = [["pre-commit", "run", "--all-files", {replace = "posargs", extend = true}]]
 description = "Perform all linting, formatting, and spelling checks"
+
+[tool.tox.labels]
+test = [
+    "3.9",
+    "3.10",
+    "3.11",
+    "3.12",
+    "3.13",
+]
