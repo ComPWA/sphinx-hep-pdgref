@@ -90,6 +90,11 @@ local_scheme = "no-local-version"
 version_scheme = "only-version"
 write_to = "src/version.py"
 
+[tool.coverage.report]
+exclude_also = [
+    "if TYPE_CHECKING:",
+]
+
 [tool.coverage.run]
 branch = true
 source = ["src"]
