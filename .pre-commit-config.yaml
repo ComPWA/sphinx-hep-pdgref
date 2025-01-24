@@ -16,6 +16,7 @@ repos:
     hooks:
       - id: check-dev-files
         args:
+          - --no-macos
           - --repo-name=sphinx-hep-pdgref
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
