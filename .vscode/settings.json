@@ -49,6 +49,7 @@
   "notebook.formatOnSave.enabled": true,
   "python.analysis.autoImportCompletions": false,
   "python.analysis.inlayHints.pytestParameters": true,
+  "python.defaultInterpreterPath": ".venv/bin/python",
   "python.terminal.activateEnvironment": false,
   "python.testing.pytestArgs": ["--color=no", "--no-cov"],
   "python.testing.pytestEnabled": true,
