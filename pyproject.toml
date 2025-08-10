@@ -65,7 +65,6 @@ test = [
     "pyquery",
     "pytest",
     "pytest-cov",
-    "pytest-xdist",
 ]
 types = [
     "pytest",
@@ -95,6 +94,13 @@ exclude_also = [
 
 [tool.coverage.run]
 branch = true
+omit = [
+    "benchmarks/**/*.py",
+    "docs/**/*.ipynb",
+    "docs/**/*.py",
+    "examples/**/*.py",
+    "tests/**/*.py",
+]
 source = ["src"]
 
 [tool.mypy]

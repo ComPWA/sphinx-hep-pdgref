@@ -1,5 +1,6 @@
 ci:
-  autoupdate_commit_msg: "MAINT: update lock files"
+  autofix_commit_msg: "MAINT: implement pre-commit autofixes"
+  autoupdate_commit_msg: "MAINT: upgrade lock files"
   autoupdate_schedule: quarterly
   skip:
     - mypy
@@ -16,6 +17,7 @@ repos:
     hooks:
       - id: check-dev-files
         args:
+          - --pytest-single-threaded
           - --repo-name=sphinx-hep-pdgref
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
