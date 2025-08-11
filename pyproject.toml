@@ -24,9 +24,9 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "Sphinx",
     "attrs >=20.1.0", # on_setattr and https://www.attrs.org/en/stable/api.html#next-gen
     "docutils",
+    "sphinx",
 ]
 description = "Sphinx role for linking to PDG reviews and listing"
 dynamic = ["version"]
@@ -53,6 +53,7 @@ Tracker = "https://github.com/ComPWA/sphinx-hep-pdgref/issues"
 
 [dependency-groups]
 dev = [
+    "poethepoet",
     "ruff",
     {include-group = "style"},
     {include-group = "test"},
@@ -65,7 +66,6 @@ test = [
     "pyquery",
     "pytest",
     "pytest-cov",
-    "pytest-xdist",
 ]
 types = [
     "pytest",
@@ -95,6 +95,13 @@ exclude_also = [
 
 [tool.coverage.run]
 branch = true
+omit = [
+    "benchmarks/**/*.py",
+    "docs/**/*.ipynb",
+    "docs/**/*.py",
+    "examples/**/*.py",
+    "tests/**/*.py",
+]
 source = ["src"]
 
 [tool.mypy]
@@ -120,6 +127,75 @@ module = ["typings.*"]
 [[tool.mypy.overrides]]
 ignore_missing_imports = true
 module = ["pyquery.*"]
+
+[tool.poe]
+executor.type = "uv"
+
+[tool.poe.tasks.all]
+help = "Run all continuous integration (CI) tasks locally"
+sequence = [
+    "style",
+    "cov",
+    "test-all",
+]
+
+[tool.poe.tasks.cov]
+cmd = """
+pytest \
+    --cov=sphinx_hep_pdgref \
+    --cov-fail-under=88 \
+    --cov-report=html \
+    --cov-report=xml \
+    ${paths}
+"""
+help = "Compute how much of the source code is covered by tests"
+
+[[tool.poe.tasks.cov.args]]
+default = "src tests"
+multiple = true
+name = "paths"
+positional = true
+
+[tool.poe.tasks.style]
+cmd = "uv run --group style --isolated --no-dev pre-commit run --all-files"
+help = "Perform all linting, formatting, and spelling checks"
+
+[tool.poe.tasks.test]
+cmd = "pytest ${paths}"
+help = "Run all unit tests"
+
+[[tool.poe.tasks.test.args]]
+default = "src tests"
+multiple = true
+name = "paths"
+positional = true
+
+[tool.poe.tasks.test-all]
+help = "Run all tests on each supported Python version"
+sequence = [
+    {ref = "test-py 3.9"},
+    {ref = "test-py 3.10"},
+    {ref = "test-py 3.11"},
+    {ref = "test-py 3.12"},
+    {ref = "test-py 3.13"},
+]
+
+[tool.poe.tasks.test-py]
+cmd = """
+uv run \
+    --group=test \
+    --isolated \
+    --no-dev \
+    --python=${version} \
+    pytest
+"""
+help = "Run all tests on a specific Python version"
+
+[[tool.poe.tasks.test-py.args]]
+default = "3.12"
+help = "Selected Python version"
+name = "version"
+positional = true
 
 [tool.pyright]
 reportGeneralTypeIssues = false
@@ -152,7 +228,6 @@ filterwarnings = [
     "ignore:'imghdr' is deprecated and slated for removal in Python 3.13:DeprecationWarning",
     "ignore:The distutils package is deprecated.*:DeprecationWarning",
 ]
-markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
 testpaths = [
     "src",
     "tests",
@@ -233,57 +308,6 @@ sort_first = [
     "project",
     "tool.setuptools",
     "tool.setuptools_scm",
-    "tool.tox.env_run_base",
 ]
 spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
-
-[tool.tox]
-env_list = [
-    "3.9",
-    "3.10",
-    "3.11",
-    "3.12",
-    "3.13",
-    "sty",
-]
-no_package = true
-requires = ["tox>=4.21.0"]
-skip_install = true
-skip_missing_interpreters = true
-
-[tool.tox.env_run_base]
-commands = [
-    [
-        "pytest",
-        {replace = "posargs", extend = true},
-        "--cov-fail-under=88",
-        "--cov-report=html",
-        "--cov-report=xml",
-        "--cov=sphinx_hep_pdgref",
-    ],
-]
-dependency_groups = ["test"]
-description = "Run test suite on Python {env_name}"
-no_package = false
-pass_env = ["*"]
-runner = "uv-venv-lock-runner"
-skip_install = false
-skip_missing_interpreters = false
-
-[tool.tox.env.cov]
-description = "Compute test coverage"
-
-[tool.tox.env.sty]
-allowlist_externals = ["pre-commit"]
-commands = [["pre-commit", "run", "--all-files", {replace = "posargs", extend = true}]]
-description = "Perform all linting, formatting, and spelling checks"
-
-[tool.tox.labels]
-test = [
-    "3.9",
-    "3.10",
-    "3.11",
-    "3.12",
-    "3.13",
-]

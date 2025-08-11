@@ -41,7 +41,6 @@ prof/
 
 # Virtual environments
 *venv/
-.tox/
 pyvenv*/
 uv.lock
 
