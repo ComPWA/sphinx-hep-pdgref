@@ -33,7 +33,6 @@ version.py
 .coverage
 .coverage.*
 .ipynb_checkpoints/
-.mypy*/
 .pytest_cache/
 __pycache__/
 htmlcov/
@@ -58,4 +57,3 @@ uv.lock
 !.readthedocs.yml
 !.vscode/*.json
 !codecov.yml
-!pyrightconfig.json

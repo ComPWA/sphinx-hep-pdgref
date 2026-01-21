@@ -53,24 +53,21 @@ Tracker = "https://github.com/ComPWA/sphinx-hep-pdgref/issues"
 
 [dependency-groups]
 dev = [
-    "poethepoet",
     "ruff",
     {include-group = "style"},
     {include-group = "test"},
 ]
 style = [
-    "mypy",
-    {include-group = "types"},
+    "pyquery",
+    "pytest",
+    "ty",
+    "types-docutils",
+    "types-setuptools",
 ]
 test = [
     "pyquery",
     "pytest",
     "pytest-cov",
-]
-types = [
-    "pytest",
-    "types-docutils",
-    "types-setuptools",
 ]
 
 [tool.setuptools]
@@ -104,35 +101,14 @@ omit = [
 ]
 source = ["src"]
 
-[tool.mypy]
-disallow_incomplete_defs = true
-disallow_untyped_defs = true
-files = [
-    "**/*.py",
-    "**/*.pyi",
-]
-show_error_codes = true
-warn_unused_configs = true
-
-[[tool.mypy.overrides]]
-check_untyped_defs = true
-disallow_incomplete_defs = false
-disallow_untyped_defs = false
-module = ["tests.*"]
-
-[[tool.mypy.overrides]]
-ignore_errors = true
-module = ["typings.*"]
-
-[[tool.mypy.overrides]]
-ignore_missing_imports = true
-module = ["pyquery.*"]
-
 [tool.poe]
+executor.isolated = true
+executor.no-group = "dev"
 executor.type = "uv"
 
 [tool.poe.tasks.all]
 help = "Run all continuous integration (CI) tasks locally"
+ignore_fail = "return_non_zero"
 sequence = [
     "style",
     "cov",
@@ -157,7 +133,8 @@ name = "paths"
 positional = true
 
 [tool.poe.tasks.style]
-cmd = "uv run --group style --isolated --no-dev pre-commit run --all-files"
+cmd = "pre-commit run --all-files"
+executor = {group = "style"}
 help = "Perform all linting, formatting, and spelling checks"
 
 [tool.poe.tasks.test]
@@ -173,61 +150,53 @@ positional = true
 [tool.poe.tasks.test-all]
 help = "Run all tests on each supported Python version"
 sequence = [
-    {ref = "test-py 3.10"},
-    {ref = "test-py 3.11"},
-    {ref = "test-py 3.12"},
-    {ref = "test-py 3.13"},
-    {ref = "test-py 3.14"},
+    {ref = "test-py310 ${paths}"},
+    {ref = "test-py311 ${paths}"},
+    {ref = "test-py312 ${paths}"},
+    {ref = "test-py313 ${paths}"},
+    {ref = "test-py314 ${paths}"},
 ]
 
-[tool.poe.tasks.test-py]
-cmd = """
-uv run \
-    --group=test \
-    --isolated \
-    --no-dev \
-    --python=${version} \
-    pytest
-"""
-help = "Run all tests on a specific Python version"
-
-[[tool.poe.tasks.test-py.args]]
-default = "3.13"
-help = "Selected Python version"
-name = "version"
+[[tool.poe.tasks.test-all.args]]
+default = ""
+multiple = true
+name = "paths"
 positional = true
 
-[tool.pyright]
-reportGeneralTypeIssues = false
-reportMissingImports = false
-reportMissingParameterType = false
-reportMissingTypeArgument = false
-reportUnboundVariable = false
-reportUnknownArgumentType = false
-reportUnknownMemberType = false
-reportUnknownParameterType = false
-reportUnknownVariableType = false
-reportUntypedFunctionDecorator = false
-reportUnusedClass = true
-reportUnusedFunction = true
-reportUnusedImport = true
-reportUnusedVariable = true
-typeCheckingMode = "strict"
-venv = ".venv"
-venvPath = "."
+[tool.poe.tasks.test-py310]
+env = {UV_PYTHON = "3.10"}
+ref = "test"
 
-[tool.pytest.ini_options]
+[tool.poe.tasks.test-py311]
+env = {UV_PYTHON = "3.11"}
+ref = "test"
+
+[tool.poe.tasks.test-py312]
+env = {UV_PYTHON = "3.12"}
+ref = "test"
+
+[tool.poe.tasks.test-py313]
+env = {UV_PYTHON = "3.13"}
+ref = "test"
+
+[tool.poe.tasks.test-py314]
+env = {UV_PYTHON = "3.14"}
+ref = "test"
+
+[tool.pytest]
 addopts = [
     "--color=yes",
     "--doctest-continue-on-failure",
     "--doctest-modules",
     "--durations=3",
+    "--import-mode=importlib",
 ]
 filterwarnings = [
     "error",
     "ignore:'imghdr' is deprecated and slated for removal in Python 3.13:DeprecationWarning",
     "ignore:The distutils package is deprecated.*:DeprecationWarning",
 ]
+minversion = "9.0"
 testpaths = [
     "src",
     "tests",
@@ -270,6 +239,7 @@ ignore = [
     "PLW1514",
     "PT001",
     "PTH",
+    "RUF067",
     "SIM108",
     "UP036",
 ]
@@ -286,7 +256,6 @@ split-on-trailing-comma = false
     "D",
     "FBT001",
     "INP001",
-    "PGH001",
     "PLC2701",
     "PLR0913",
     "PLR2004",
@@ -311,3 +280,8 @@ sort_first = [
 ]
 spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
+
+[tool.ty.rules]
+division-by-zero = "warn"
+possibly-missing-import = "warn"
+possibly-unresolved-reference = "warn"

@@ -6,12 +6,12 @@
 [![Open in Visual Studio Code](https://img.shields.io/badge/vscode-open-blue?logo=visualstudiocode)](https://open.vscode.dev/ComPWA/sphinx-hep-pdgref)
 [![Test coverage](https://codecov.io/gh/ComPWA/sphinx-hep-pdgref/branch/main/graph/badge.svg?token=SS8ZB8J11N)](https://codecov.io/gh/ComPWA/sphinx-hep-pdgref)
 [![CI status](https://github.com/ComPWA/sphinx-hep-pdgref/workflows/CI-tests/badge.svg)](https://github.com/ComPWA/sphinx-hep-pdgref/actions?query=branch%3Amain+workflow%3ACI-tests)
-[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy.readthedocs.io)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ComPWA/sphinx-hep-pdgref/main.svg)](https://results.pre-commit.ci/latest/github/ComPWA/sphinx-hep-pdgref/main)
-[![Spelling checked](https://img.shields.io/badge/cspell-checked-brightgreen.svg)](https://github.com/streetsidesoftware/cspell/tree/master/packages/cspell)
+[![Spelling checked](https://img.shields.io/badge/cspell-checked-brightgreen.svg)](https://github.com/streetsidesoftware/cspell/tree/main/packages/cspell)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
+[![ty](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ty/main/assets/badge/v0.json)](https://github.com/astral-sh/ty)
 
 This package is a
 [Sphinx extension](https://www.sphinx-doc.org/en/master/usage/extensions/index.html)

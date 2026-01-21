@@ -1,7 +1,7 @@
-import pyquery as pq  # pyright: ignore[reportMissingTypeStubs]
+import pyquery as pq
 import pytest
 
-from sphinx_hep_pdgref.entry import DEFAULT_YEAR  # type:ignore[import]
+from sphinx_hep_pdgref.entry import DEFAULT_YEAR
 
 
 @pytest.mark.sphinx("text", testroot="dummy")
