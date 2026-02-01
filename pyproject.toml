@@ -124,6 +124,7 @@ pytest \
     --cov-report=xml \
     ${paths}
 """
+executor = {group = "test"}
 help = "Compute how much of the source code is covered by tests"
 
 [[tool.poe.tasks.cov.args]]
@@ -139,6 +140,7 @@ help = "Perform all linting, formatting, and spelling checks"
 
 [tool.poe.tasks.test]
 cmd = "pytest ${paths}"
+executor = {group = "test"}
 help = "Run all unit tests"
 
 [[tool.poe.tasks.test.args]]
