@@ -12,7 +12,7 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/ComPWA/policy
-    rev: 0.8.2rc12
+    rev: 0.8.2rc15
     hooks:
       - id: check-dev-files
         args:
@@ -21,7 +21,7 @@ repos:
           - --type-checker=ty
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.14
+    rev: v0.15.0
     hooks:
       - id: ruff-check
         args: [--fix]
