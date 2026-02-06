@@ -46,10 +46,10 @@ content-type = "text/markdown"
 file = "README.md"
 
 [project.urls]
-Changelog = "https://github.com/ComPWA/sphinx-hep-pdgref/releases"
-Documentation = "https://github.com/ComPWA/sphinx-hep-pdgref/blob/main/README.md"
-Source = "https://github.com/ComPWA/sphinx-hep-pdgref"
-Tracker = "https://github.com/ComPWA/sphinx-hep-pdgref/issues"
+changelog = "https://github.com/ComPWA/sphinx-hep-pdgref/releases"
+documentation = "https://github.com/ComPWA/sphinx-hep-pdgref/blob/main/README.md"
+issues = "https://github.com/ComPWA/sphinx-hep-pdgref/issues"
+source = "https://github.com/ComPWA/sphinx-hep-pdgref"
 
 [dependency-groups]
 dev = [
