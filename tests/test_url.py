@@ -1,11 +1,7 @@
 import pytest
 
-from sphinx_hep_pdgref.entry import DEFAULT_YEAR, PDGEntry  # type:ignore[import]
-from sphinx_hep_pdgref.url import (  # type:ignore[import]
-    URLPattern,
-    create_link_text,
-    create_url,
-)
+from sphinx_hep_pdgref.entry import DEFAULT_YEAR, PDGEntry
+from sphinx_hep_pdgref.url import URLPattern, create_link_text, create_url
 
 
 @pytest.mark.parametrize(
@@ -50,7 +46,7 @@ from sphinx_hep_pdgref.url import (  # type:ignore[import]
     ],
 )
 def test_create_link_text_url(entry: PDGEntry, link_text: str, url: str):
-    if link_text is None or url is None:  # pyright: ignore[reportUnnecessaryComparison]
+    if link_text is None or url is None:
         with pytest.raises(ValueError, match=r"^URL cannot contain spaces or commas$"):
             create_url(entry, pattern=URLPattern.LISTING)
         return

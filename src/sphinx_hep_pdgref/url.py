@@ -31,7 +31,7 @@ def create_url(entry: PDGEntry, *, pattern: URLPattern) -> str:
 
 
 def _create_listing_url(entry: PDGEntry) -> str:
-    url = URLPattern.LISTING.format(entry.year, entry.section)  # type: ignore[str-format]
+    url = URLPattern.LISTING.format(entry.year, entry.section)
     url += __create_page_anchor(entry)
     return url
 
@@ -40,7 +40,7 @@ def _create_review_url(entry: PDGEntry) -> str:
     section_url = entry.section
     section_url = section_url.lower()
     section_url = section_url.replace(" ", "-")
-    url = URLPattern.REVIEW.format(entry.year, section_url)  # type: ignore[str-format]
+    url = URLPattern.REVIEW.format(entry.year, section_url)
     url += __create_page_anchor(entry)
     return url
 

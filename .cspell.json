@@ -22,6 +22,7 @@
     "**/.cspell.json",
     ".editorconfig",
     ".envrc",
+    ".github/dependabot.yml",
     ".gitignore",
     ".pre-commit-config.yaml",
     ".prettierignore",
@@ -31,7 +32,6 @@
     "pyproject.toml"
   ],
   "ignoreWords": [
-    "MAINT",
     "bdist",
     "codecov",
     "commitlint",
@@ -40,6 +40,7 @@
     "mypy",
     "noreply",
     "outdir",
+    "poethepoet",
     "prereleased",
     "pypi",
     "pyquery",

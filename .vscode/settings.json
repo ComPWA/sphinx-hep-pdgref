@@ -37,13 +37,10 @@
   "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
   "gitlens.telemetry.enabled": false,
   "multiDiffEditor.experimental.enabled": true,
-  "mypy-type-checker.args": ["--config-file=${workspaceFolder}/pyproject.toml"],
   "notebook.codeActionsOnSave": {
     "notebook.source.organizeImports": "explicit"
   },
   "notebook.formatOnSave.enabled": true,
-  "python.analysis.autoImportCompletions": false,
-  "python.analysis.inlayHints.pytestParameters": true,
   "python.defaultInterpreterPath": ".venv/bin/python",
   "python.terminal.activateEnvironment": false,
   "python.testing.pytestEnabled": true,
@@ -53,11 +50,10 @@
   "ruff.enable": true,
   "ruff.importStrategy": "fromEnvironment",
   "ruff.organizeImports": true,
-  "search.exclude": {
-    "**/tests/**/__init__.py": true,
-    "**/uv.lock": true
-  },
   "telemetry.telemetryLevel": "off",
   "testing.coverageToolbarEnabled": true,
-  "testing.showCoverageInExplorer": true
+  "testing.showCoverageInExplorer": true,
+  "ty.completions.autoImport": false,
+  "ty.diagnosticMode": "workspace",
+  "ty.importStrategy": "fromEnvironment"
 }

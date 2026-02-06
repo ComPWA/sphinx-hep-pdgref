@@ -9,15 +9,15 @@ collect_ignore = ["roots"]
 # cspell:ignore rootdir
 sphinx_version = version("Sphinx")
 if sphinx_version < "7.2":
-    from sphinx.testing.path import path
+    from sphinx.testing.path import path  # ty:ignore[unresolved-import]
 
     @pytest.fixture(scope="session")
-    def rootdir() -> path:  # pyright:ignore[reportRedeclaration]
+    def rootdir() -> path:
         return path(__file__).parent.abspath() / "roots"
 
 else:
     from pathlib import Path
 
-    @pytest.fixture(scope="session")  # type:ignore[misc]
+    @pytest.fixture(scope="session")
     def rootdir() -> Path:
         return Path(__file__).parent.absolute() / "roots"
