@@ -12,13 +12,9 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/ComPWA/policy
-    rev: 0.8.13
+    rev: b63a7348f034f3a58d0598deab44bccf8eedf069
     hooks:
       - id: check-dev-files
-        args:
-          - --pytest-single-threaded
-          - --repo-name=sphinx-hep-pdgref
-          - --type-checker=ty
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.15.20
@@ -89,12 +85,8 @@ repos:
             .*\.py
           )$
 
-  - repo: local
+  - repo: https://github.com/astral-sh/ty-pre-commit
+    rev: v0.0.57
     hooks:
       - id: ty
-        name: ty
-        entry: ty check
-        args: [--no-progress, --output-format=concise]
-        require_serial: true
-        language: system
-        types_or: [python, pyi, jupyter]
+        args: [--no-default-groups, --group=style]
