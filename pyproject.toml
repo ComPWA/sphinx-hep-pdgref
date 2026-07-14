@@ -1,49 +1,42 @@
-[build-system]
-build-backend = "setuptools.build_meta"
-requires = [
-    "setuptools>=61.2",
-    "setuptools_scm",
-]
-
 [project]
-authors = [{name = "Common Partial Wave Analysis", email = "compwa-admin@ep1.rub.de"}]
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: BSD License",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
-    "Programming Language :: Python",
-    "Topic :: Documentation",
-    "Topic :: Utilities",
-    "Typing :: Typed",
-]
-dependencies = [
-    "attrs >=20.1.0", # on_setattr and https://www.attrs.org/en/stable/api.html#next-gen
-    "docutils",
-    "sphinx",
-]
+name = "sphinx-hep-pdgref"
 description = "Sphinx role for linking to PDG reviews and listing"
-dynamic = ["version"]
+requires-python = ">=3.10"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{ name = "Common Partial Wave Analysis", email = "compwa-admin@ep1.rub.de" }]
+maintainers = [{ email = "compwa-admin@ep1.rub.de" }]
 keywords = [
     "particle data group",
     "pdg",
     "reference",
     "sphinx",
 ]
-license = {text = "BSD 3-Clause License"}
-maintainers = [{email = "compwa-admin@ep1.rub.de"}]
-name = "sphinx-hep-pdgref"
-requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Documentation",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+dependencies = [
+    "attrs >=20.1.0",  # on_setattr and https://www.attrs.org/en/stable/api.html#next-gen
+    "docutils",
+    "sphinx",
+]
+dynamic = ["version"]
 
 [project.readme]
-content-type = "text/markdown"
 file = "README.md"
+content-type = "text/markdown"
 
 [project.urls]
 Changelog = "https://github.com/ComPWA/sphinx-hep-pdgref/releases"
@@ -54,8 +47,8 @@ Source = "https://github.com/ComPWA/sphinx-hep-pdgref"
 [dependency-groups]
 dev = [
     "ruff",
-    {include-group = "style"},
-    {include-group = "test"},
+    { include-group = "style" },
+    { include-group = "test" },
 ]
 style = [
     "pyquery",
@@ -70,20 +63,12 @@ test = [
     "pytest-cov",
 ]
 
-[tool.setuptools]
-include-package-data = true
-license-files = ["LICENSE"]
-package-dir = {"" = "src"}
-
-[tool.setuptools.package-data]
-"*" = ["py.typed"]
-
-[tool.setuptools.packages.find]
-namespaces = false
-where = ["src"]
-
-[tool.setuptools_scm]
-write_to = "src/version.py"
+[build-system]
+requires = [
+    "setuptools>=61.2",
+    "setuptools_scm",
+]
+build-backend = "setuptools.build_meta"
 
 [tool.compwa.policy]
 pytest-single-threaded = true
@@ -93,9 +78,7 @@ repo-name = "sphinx-hep-pdgref"
 type-checker = ["ty"]
 
 [tool.coverage.report]
-exclude_also = [
-    "if TYPE_CHECKING:",
-]
+exclude_also = ["if TYPE_CHECKING:"]
 
 [tool.coverage.run]
 branch = true
@@ -125,7 +108,7 @@ pytest \
     --cov-report=xml \
     ${paths}
 """
-executor = {group = "test"}
+executor = { group = "test" }
 help = "Compute how much of the source code is covered by tests"
 
 [[tool.poe.groups.test.tasks.cov.args]]
@@ -136,7 +119,7 @@ positional = true
 
 [tool.poe.groups.test.tasks.test]
 cmd = "pytest ${paths}"
-executor = {group = "test"}
+executor = { group = "test" }
 help = "Run all unit tests"
 
 [[tool.poe.groups.test.tasks.test.args]]
@@ -148,11 +131,11 @@ positional = true
 [tool.poe.groups.test.tasks.test-all]
 help = "Run all tests on each supported Python version"
 sequence = [
-    {ref = "test-py310 ${paths}"},
-    {ref = "test-py311 ${paths}"},
-    {ref = "test-py312 ${paths}"},
-    {ref = "test-py313 ${paths}"},
-    {ref = "test-py314 ${paths}"},
+    "test-py310 ${paths}",
+    "test-py311 ${paths}",
+    "test-py312 ${paths}",
+    "test-py313 ${paths}",
+    "test-py314 ${paths}",
 ]
 
 [[tool.poe.groups.test.tasks.test-all.args]]
@@ -162,46 +145,47 @@ name = "paths"
 positional = true
 
 [tool.poe.groups.test.tasks.test-py310]
-env = {UV_PYTHON = "3.10"}
+env = { UV_PYTHON = "3.10" }
 ref = "test"
 
 [tool.poe.groups.test.tasks.test-py311]
-env = {UV_PYTHON = "3.11"}
+env = { UV_PYTHON = "3.11" }
 ref = "test"
 
 [tool.poe.groups.test.tasks.test-py312]
-env = {UV_PYTHON = "3.12"}
+env = { UV_PYTHON = "3.12" }
 ref = "test"
 
 [tool.poe.groups.test.tasks.test-py313]
-env = {UV_PYTHON = "3.13"}
+env = { UV_PYTHON = "3.13" }
 ref = "test"
 
 [tool.poe.groups.test.tasks.test-py314]
-env = {UV_PYTHON = "3.14"}
+env = { UV_PYTHON = "3.14" }
 ref = "test"
 
 [tool.poe.tasks.all]
 help = "Run all continuous integration (CI) tasks locally"
 ignore_fail = "return_non_zero"
-sequence = [
-    "style",
-    "cov",
-    "test-all",
-]
+sequence = ["style", "cov", "test-all"]
 
 [tool.poe.tasks.style]
 cmd = "pre-commit run --all-files"
-executor = {group = "style"}
+executor = { group = "style" }
 help = "Perform all linting, formatting, and spelling checks"
 
 [tool.poe.tasks.upgrade]
-executor = {type = "simple"}
+executor = { type = "simple" }
 help = "Upgrade lock files"
-parallel = [
-    {cmd = "pre-commit autoupdate -j8"},
-    {cmd = "uv lock --upgrade"},
-]
+parallel = ["_upgrade-precommit", "_upgrade-uv"]
+
+[tool.poe.tasks._upgrade-precommit]
+cmd = "pre-commit autoupdate -j8"
+executor = { type = "simple" }
+
+[tool.poe.tasks._upgrade-uv]
+cmd = "uv lock --upgrade"
+executor = { type = "simple" }
 
 [tool.pytest]
 addopts = [
@@ -217,18 +201,12 @@ filterwarnings = [
     "ignore:The distutils package is deprecated.*:DeprecationWarning",
 ]
 minversion = "9.0"
-testpaths = [
-    "src",
-    "tests",
-]
+testpaths = ["src", "tests"]
 
 [tool.ruff]
 preview = true
 show-fixes = true
-src = [
-    "src",
-    "tests",
-]
+src = ["src", "tests"]
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -289,18 +267,31 @@ split-on-trailing-comma = false
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
-[tool.tomlsort]
-all = false
-ignore_case = true
-in_place = true
-sort_first = [
-    "build-system",
-    "project",
-    "tool.setuptools",
-    "tool.setuptools_scm",
-]
-spaces_indent_inline_array = 4
-trailing_comma_inline_array = true
+[tool.setuptools]
+include-package-data = true
+package-dir = { "" = "src" }
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
+
+[tool.setuptools.packages.find]
+namespaces = false
+where = ["src"]
+
+[tool.setuptools_scm]
+version_file = "src/version.py"
+
+[tool.tombi.format.rules]
+indent-width = 4
+line-width = 88
+
+[tool.tombi.lint.rules]
+key-empty = "off"
+
+[[tool.tombi.schemas]]
+root = "tool.compwa.policy"
+path = "https://raw.githubusercontent.com/ComPWA/policy/b1a4216872b0e6539e0b70a051a6d3aaed874356/compwa-policy.schema.json"
+include = ["pyproject.toml"]
 
 [tool.ty.rules]
 division-by-zero = "warn"
