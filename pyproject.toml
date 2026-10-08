@@ -217,32 +217,8 @@ line-ending = "lf"
 
 [tool.ruff.lint]
 ignore = [
-    "ANN401",
-    "ARG001",
-    "COM812",
-    "CPY001",
-    "D101",
-    "D102",
-    "D103",
-    "D105",
-    "D107",
-    "D203",
-    "D213",
-    "D407",
-    "D416",
     "DOC",
-    "E501",
-    "FURB101",
-    "FURB103",
-    "FURB140",
-    "G004",
-    "ISC001",
-    "PLW1514",
-    "PT001",
     "PTH",
-    "RUF067",
-    "SIM108",
-    "UP036",
     "any-type",
     "if-else-block-instead-of-if-exp",
     "incorrect-blank-line-before-class",
@@ -254,6 +230,7 @@ ignore = [
     "missing-trailing-comma",
     "multi-line-summary-second-line",
     "non-empty-init-module",
+    "outdated-version-block",
     "pytest-fixture-incorrect-parentheses-style",
     "read-whole-file",
     "reimplemented-starmap",
@@ -264,6 +241,7 @@ ignore = [
     "undocumented-public-init",
     "undocumented-public-method",
     "unspecified-encoding",
+    "unused-function-argument",
     "write-whole-file",
 ]
 select = ["ALL"]
@@ -273,19 +251,10 @@ task-tags = ["cspell"]
 split-on-trailing-comma = false
 
 [tool.ruff.lint.per-file-ignores]
-"setup.py" = ["D100"]
+"setup.py" = ["undocumented-public-module"]
 "tests/*" = [
     "ANN",
     "D",
-    "FBT001",
-    "INP001",
-    "PLC2701",
-    "PLR0913",
-    "PLR2004",
-    "PLR6301",
-    "RUF069",
-    "S101",
-    "SLF001",
     "T20",
     "assert",
     "boolean-type-hint-positional-argument",
@@ -295,6 +264,7 @@ split-on-trailing-comma = false
     "magic-value-comparison",
     "no-self-use",
     "private-member-access",
+    "too-many-arguments",
 ]
 
 [tool.ruff.lint.pydocstyle]
