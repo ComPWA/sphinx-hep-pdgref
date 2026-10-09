@@ -6,12 +6,12 @@ The URL is formatted in such a way that it leads to a page number if available,
 """
 
 import re
-from enum import Enum
+from enum import StrEnum
 
 from .entry import PDGEntry
 
 
-class URLPattern(str, Enum):
+class URLPattern(StrEnum):
     LISTING = "https://pdg.lbl.gov/{0}/listings/rpp{0}-list-{1}.pdf"
     REVIEW = "https://pdg.lbl.gov/{0}/reviews/rpp{0}-rev-{1}.pdf"
 
