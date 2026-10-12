@@ -3,7 +3,7 @@
 [![PyPI package](https://badge.fury.io/py/sphinx-hep-pdgref.svg)](https://pypi.org/project/sphinx-hep-pdgref)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/sphinx-hep-pdgref)](https://pypi.org/project/sphinx-hep-pdgref)
 [![BSD 3-Clause license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Open in Visual Studio Code](https://img.shields.io/badge/vscode-open-blue?logo=visualstudiocode)](https://open.vscode.dev/ComPWA/sphinx-hep-pdgref)
+[![Open in Visual Studio Code](https://img.shields.io/badge/vscode-open-blue?logo=visualstudiocode)](https://github.dev/ComPWA/sphinx-hep-pdgref)
 [![Test coverage](https://codecov.io/gh/ComPWA/sphinx-hep-pdgref/branch/main/graph/badge.svg?token=SS8ZB8J11N)](https://codecov.io/gh/ComPWA/sphinx-hep-pdgref)
 [![CI status](https://github.com/ComPWA/sphinx-hep-pdgref/workflows/CI/badge.svg)](https://github.com/ComPWA/sphinx-hep-pdgref/actions/workflows/ci.yml?query=branch%3Amain+workflow%3Aci)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ComPWA/sphinx-hep-pdgref/main.svg)](https://results.pre-commit.ci/latest/github/ComPWA/sphinx-hep-pdgref/main)
