@@ -39,7 +39,6 @@
   "github-actions.workflows.pinned.refresh.enabled": true,
   "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
   "gitlens.telemetry.enabled": false,
-  "multiDiffEditor.experimental.enabled": true,
   "notebook.codeActionsOnSave": {
     "notebook.source.organizeImports": "explicit"
   },

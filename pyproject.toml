@@ -28,7 +28,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "attrs >=20.1.0",  # on_setattr and https://www.attrs.org/en/stable/api.html#next-gen
+    "attrs>=20.1.0",  # on_setattr and https://www.attrs.org/en/stable/api.html#next-gen
     "docutils",
     "sphinx",
 ]
@@ -293,7 +293,7 @@ key-empty = "off"
 
 [[tool.tombi.schemas]]
 root = "tool.compwa.policy"
-path = "https://raw.githubusercontent.com/ComPWA/policy/0.10.1/compwa-policy.schema.json"
+path = "https://raw.githubusercontent.com/ComPWA/policy/0.10.3/compwa-policy.schema.json"
 include = ["pyproject.toml"]
 
 [tool.ty.rules]
