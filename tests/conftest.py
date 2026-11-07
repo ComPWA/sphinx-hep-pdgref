@@ -9,7 +9,7 @@ collect_ignore = ["roots"]
 # cspell:ignore rootdir
 sphinx_version = version("Sphinx")
 if sphinx_version < "7.2":
-    from sphinx.testing.path import path  # ty:ignore[unresolved-import]
+    from sphinx.testing.path import path  # ty:ignore[import-not-found]
 
     @pytest.fixture(scope="session")
     def rootdir() -> path:
