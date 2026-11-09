@@ -1,7 +1,6 @@
 """Create an URL to a PDF file in the PDG.
 
-The URL is formatted in such a way that it leads to a page number if available,
-`like so
+The URL is formatted in such a way that it leads to a page number if available, `like so
 <https://helpx.adobe.com/acrobat/kb/link-html-pdf-page-acrobat.html>`_.
 """
 

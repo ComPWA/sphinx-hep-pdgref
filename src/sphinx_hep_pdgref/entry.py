@@ -1,15 +1,14 @@
 """Data formatters for generating a link to a review or listing in the PDG.
 
-As an example, the `PDG <https://pdg.lbl.gov>`_ has its pdf files for reviews
-stored as:
+As an example, the `PDG <https://pdg.lbl.gov>`_ has its pdf files for reviews stored as:
 
 .. code-block::
 
     https://pdg.lbl.gov/2020/reviews/rpp2020-rev-resonances.pdf#page=3
 
 Note the page number. This is `a trick
-<https://helpx.adobe.com/acrobat/kb/link-html-pdf-page-acrobat.html>_` to
-directly lead to the correct page number when clicking the generated link.
+<https://helpx.adobe.com/acrobat/kb/link-html-pdf-page-acrobat.html>_` to directly lead
+to the correct page number when clicking the generated link.
 """
 
 from __future__ import annotations
@@ -39,7 +38,7 @@ class PDGEntry:
 
     @staticmethod
     def from_str(text: str) -> PDGEntry:
-        """Create an entry from the contents of the :code:`pdg` role.
+        """Create an entry from the contents of the ``pdg`` role.
 
         >>> from sphinx_hep_pdgref.entry import PDGEntry
         >>> PDGEntry.from_str("Resonances; 2018; p.5")
